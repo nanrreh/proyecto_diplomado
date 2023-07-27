@@ -5,7 +5,7 @@ Este es el proyecto del equipo 3 grupo colaborativo DIPL OPC GRADO DESLLO WEB VI
 
 Resumen del sitio:
 
-Desarollar un software para el manejo de inventario para un cultivo de arandanos.
+Software para el manejo de recoleccion de fruta para un cultivo de arandanos.
 
 
 ## Authors

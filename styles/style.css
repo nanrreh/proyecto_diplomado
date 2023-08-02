@@ -10,10 +10,15 @@ body {
     align-content: center;
     align-items: center;
 }
+.full_w {
+    width: 100%;
+    max-width: 2000px;
+}
 
 .logo {
     width: 70%;
     margin-bottom: 15px;
+    max-width: 300px;
 }
 
 .box_login {
@@ -24,6 +29,7 @@ body {
     border-radius: 20px;
     padding: 20px;
     min-height: 400px;
+    max-width: 600px;
 }
 
 .form_login {

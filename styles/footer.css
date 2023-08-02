@@ -1,12 +1,6 @@
 .main_footer {
-    -webkit-box-shadow: 1px -6px 44px -14px rgba(0,0,0,0.75);
-    -moz-box-shadow: 1px -6px 44px -14px rgba(0,0,0,0.75);
-    box-shadow: 1px -6px 44px -14px rgba(0,0,0,0.75);
-    background-color: #536F99;
-    border-top-left-radius: 70px;
-    position: absolute;
+    border-top: 2px solid #327534;
     width: 100%;
-    bottom: 0;
 }
 
 .footer_container {

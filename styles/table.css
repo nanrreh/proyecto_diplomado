@@ -1,0 +1,29 @@
+.table {
+    border: 1px solid rgb(222, 226, 230);
+    margin-top: 40px;
+}
+.table thead tr th{
+    background-color: #7679A4 !important;
+    color: #ffffff;
+}
+.table_btn {
+    background-color: transparent;
+    border: none;
+    padding: 5px 8px;
+    border-radius: 5px;
+}
+.table_btn.show {
+    background-color: #62baec;
+}
+.table_btn.edit {
+    background-color: #71c071;
+}
+.table_btn.delete {
+    background-color: #ce4e4e;
+}
+.table_btn:hover {
+    background-color: #7679A4;
+}
+.table_btn img {
+    width: 20px;
+}

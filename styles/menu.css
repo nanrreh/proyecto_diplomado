@@ -1,0 +1,28 @@
+.menu_logo {
+    width: 150px;
+}
+.main_navbar {
+    background-color: #536F99;
+    border-bottom-right-radius: 70px;
+    -webkit-box-shadow: 2px 10px 31px -14px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 10px 31px -14px rgba(0,0,0,0.75);
+    box-shadow: 2px 10px 31px -14px rgba(0,0,0,0.75);
+}
+.main_navbar .container-fluid {
+    max-width: 1440px;
+}
+.main_navbar .nav-link {
+    color: #ffffff;
+    border-bottom: 2px solid transparent;
+    font-size: 20px;
+}
+.navbar-nav {
+    gap: 25px;
+    margin-left: 20px;
+}
+.main_navbar .nav-link.active {
+    color: #ffffff;
+    font-weight: bold;
+    border: 1px solid #ffffff;
+    border-bottom-right-radius: 15px;
+}

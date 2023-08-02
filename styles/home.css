@@ -1,0 +1,62 @@
+
+.container_columns {
+    max-width: 1440px;
+}
+.main_home {
+    margin-top: 40px;
+}
+.main_title {
+    margin-bottom: 40px;
+}
+.list-group {
+    text-align: left;
+    margin-top: 20px;
+}
+.list-group li:nth-child(-n+3) {
+    background-color: rgba(255,0,0,0.2);
+    border-bottom: red solid 1px;
+}
+.list-group li:nth-child(-n+3):before {
+    content: "!";
+    margin-right: 10px;
+    background-color: red;
+    color: #ffffff;
+    padding: 3px 10px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+.podio_raiting {
+    display: flex;
+    justify-content: center;
+}
+.podio_raiting .card{
+    border: none;
+}
+.podio_raiting img {
+    width: 100px;
+}
+.podio_raiting .card p{
+    margin-bottom: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.podio_raiting .card {
+    justify-content: flex-end;
+    align-items: center;
+}
+.base {
+    background-color: black;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-top: 20px;
+}
+.card.silver .base {
+    height: 70px;
+}
+.card.gold .base {
+    height: 100px;
+}
+.card.bronze .base {
+    height: 50px;
+}

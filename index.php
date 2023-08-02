@@ -9,7 +9,7 @@
 <body>
 
 <main class="main_login">
-    <div class="container text-center position-relative">
+    <div class="container text-center position-relative full_w">
         <div class="row align-items-center">
             <div class="col col_farmer">
                 <img src="img/farmer.png" alt="" class="l_farmer farmer">
@@ -17,10 +17,10 @@
             <div class="col col_form">
                 <div class="box_login">
                     <img src="img/logo.png" alt="" class="logo">
-                    <form action="" class="form_login">
+                    <form action="views/home.php" class="form_login">
                         <input type="text" placeholder="Correo">
                         <input type="password" placeholder="Contraseña">
-                        <input type="button" value="Entrar" class="btn_login">
+                        <input type="submit" value="Entrar" class="btn_login">
                     </form>
                 </div>
             </div>

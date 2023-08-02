@@ -50,7 +50,7 @@
                     <li class="list-group-item">Juliana Diaz: 7kg</li>
                 </ul>
             </div>
-            <div class="col ">
+            <div class="col position-relative">
                 <h2 class="subtitle text-center">Los mejores promedios</h2>
                 <div class="podio_raiting">
                     <div class="card silver">

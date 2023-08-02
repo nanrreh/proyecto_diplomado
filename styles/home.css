@@ -28,6 +28,10 @@
 .podio_raiting {
     display: flex;
     justify-content: center;
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+    transform: translateX(-50%);
 }
 .podio_raiting .card{
     border: none;

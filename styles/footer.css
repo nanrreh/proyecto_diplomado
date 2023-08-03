@@ -7,3 +7,30 @@
     max-width: 1440px;
     margin: auto;
 }
+
+.footer_container_img{
+	width :30px
+}
+
+.footer_container p{
+text-align: center
+}
+
+.footer-container b{
+	text-align: center
+}
+
+.container_img{
+	max-width: fit-content;
+	gap: 15px;
+    margin: auto; 
+	display:flex;
+}
+
+.container_img img{
+	width : 30px;
+}
+
+.container_text p{
+	text-align : center
+}

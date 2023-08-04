@@ -1,7 +1,7 @@
 <?php
 require_once '../config/database.php';
 
-/** Todo::switch para seleccionar que opcion se debe usar (Registro, Usuarios)*/
+/** Todo::switch para seleccionar que opcion se debe usar (Registro, Valvulas)*/
 switch ($_REQUEST['opcion']) {
     case "create":
         $sql=" insert into valvulas(nombre, estado, comentario) 

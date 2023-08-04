@@ -6,24 +6,62 @@ switch ($_REQUEST['opcion']) {
     case "create":
         $sql="
         insert into usuarios(nombres, apellidos, documento, fecha_nacimiento, cargo_id)
-        values('".$_REQUEST['obj_user']['nombres']."','".$_REQUEST['obj_user']['apellidos']."','".$_REQUEST['obj_user']['documento']."','".$_REQUEST['obj_user']['fecha_nacimiento']."',".$_REQUEST['obj_user']['cargo'].")";
+        values('".$_REQUEST['nombres']."','".$_REQUEST['apellidos']."','".$_REQUEST['documento']."','".$_REQUEST['fecha_nacimiento']."',".$_REQUEST['cargo'].")";
 
         $consulta=mysqli_query($conexion, $sql);
 
         if ($consulta)
-        echo 'true';
+            echo 'true';
         else
-        echo 'false';
+            echo 'false';
     break;
     case "update":
-        echo "i es una barra";
+        $sql="
+                UPDATE usuarios
+                SET 
+                    nombres = '".$_REQUEST['nombres']."', 
+                    apellidos = '".$_REQUEST['apellidos']."', 
+                    documento = '".$_REQUEST['documento']."',
+                    fecha_nacimiento = '".$_REQUEST['fecha_nacimiento']."',
+                    cargo_id = '".$_REQUEST['cargo']."'
+                WHERE id_usuario = '".$_REQUEST['id']."'
+        ";
+
+        $consulta=mysqli_query($conexion, $sql);
+
+        if ($consulta)
+            echo 'true';
+        else
+            echo 'false';
     break;
     case "delete":
-        echo "i es un pastel";
+        $sql="
+                delete from usuarios
+                WHERE id_usuario = '".$_REQUEST['id']."'
+        ";
+
+        $consulta=mysqli_query($conexion, $sql);
+
+        if ($consulta)
+            echo 'true';
+        else
+            echo 'false';
     break;
     case "show":
 
-        $sql="select u.id_usuario, u.nombres, u.apellidos, u.documento, tc.nombre_cargo from usuarios u inner join tipo_cargo tc on tc.id = u.cargo_id";
+        $sql="select * from usuarios where id_usuario = '".$_REQUEST['id']."' ";
+
+        $consulta=mysqli_query($conexion, $sql);
+
+        echo json_encode(mysqli_fetch_assoc($consulta));
+    break;
+    case "admin":
+        $sql="
+                SELECT u.id_usuario, u.nombres, u.apellidos, u.documento, u.fecha_nacimiento, tc.nombre_cargo AS  cargo
+                FROM usuarios u 
+                INNER JOIN tipo_cargo tc ON tc.id = u.cargo_id
+                ORDER BY id_usuario DESC
+        ";
 
         $consulta=mysqli_query($conexion, $sql);
 

@@ -24,7 +24,7 @@
                 <div class="navbar-nav">
                     <a class="nav-link active" aria-current="page" href="home.php">Inicio</a>
                     <a class="nav-link" href="valvulas.php">Valvúlas</a>
-                    <a class="nav-link" href="#">Recolectores</a>
+                    <a class="nav-link" href="empleados.php">Recolectores</a>
                     <a class="nav-link" href="#">Recolección</a>
                     <a class="nav-link" href="#">roles</a>
                 </div>
@@ -86,15 +86,26 @@
 <footer class="main_footer">
     <div class="container footer_container">
         <div class="row align-items-center">
-            <div class="col">
-                <p>col1</p>
-            </div>
-            <div class="col">
-                <p>col2</p>
+            <b><p class="class="text-center">Nuestras redes sociales</p></b>
 
+            <div class="container_img">
+                <a href="https://www.facebook.com/" target="_blank">
+                    <img src="../img/fb.png" alt="">
+                </a>
+                <a href="https://www.instagram.com/" target="_blank">
+                    <img src="../img/ig.png" alt="">
+                </a>
+                <a href="https://web.whatsapp.com/" target="_blank">
+                    <img src="../img/ws.png" alt="">
+                </a>
             </div>
-            <div class="col">
-                <p>col3</p>
+
+            <div class="container_text row align-items-center">
+                <p>hsecobla@ibero.edu.co</p>
+                <p>lrojash2@ibero.edu.co</p>
+                <p>Irodri32@ibero.edu.co</p>
+
+                <b><p>Boticampo © 2023. Todos los derechos reservados</p></b>
             </div>
         </div>
     </div>

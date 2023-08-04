@@ -10,7 +10,12 @@
 }
 .list-group {
     text-align: left;
-    margin-top: 20px;
+    margin: 20px auto;
+    max-width: 330px;
+}
+.list-group li {
+    text-align: center;
+    position: relative;
 }
 .list-group li:nth-child(-n+3) {
     background-color: rgba(255,0,0,0.2);
@@ -21,9 +26,11 @@
     margin-right: 10px;
     background-color: red;
     color: #ffffff;
-    padding: 3px 10px;
+    padding: 0 10px;
     border-radius: 50%;
     font-weight: bold;
+    position: absolute;
+    left: 10px;
 }
 .podio_raiting {
     display: flex;

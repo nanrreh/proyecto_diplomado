@@ -36,6 +36,45 @@
     <div class="container container_page">
         <h1 class="main_title text-center">Valvulas</h1>
 
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseTwo">
+                        Agregar valvula
+                    </button>
+                </h2>
+                <!--poner show para ver-->
+                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <form action="" class="formulario_valvulas">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Nombre de válvula</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="valvula 1" name="name_valvula">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Estado actual</label>
+                                <select class="form-select" aria-label="Default select example" name="status">
+                                    <option value="1">En recoleccion</option>
+                                    <option value="2">En crecimiento</option>
+                                    <option value="3">En mantenimiento</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label">comentarios</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="comments" ></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <table class="table">
             <thead>
             <tr>

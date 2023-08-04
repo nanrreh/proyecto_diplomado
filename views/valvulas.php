@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../styles/footer.css">
     <link rel="stylesheet" type="text/css" href="../styles/valvulas.css">
     <link rel="stylesheet" type="text/css" href="../styles/table.css">
+    <script src="../js/valvulas.js"></script>
 </head>
 <body>
 <header>
@@ -32,14 +33,14 @@
     </nav>
 </header>
 
-<main class="main_valvulas">
+<main class="main_valvulas" id="main_valvulas">
     <div class="container container_page">
         <h1 class="main_title text-center">Valvulas</h1>
 
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseTwo">
+                    <button class="accordion-button collapsed" id="text_form" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseTwo">
                         Agregar valvula
                     </button>
                 </h2>
@@ -49,23 +50,24 @@
                         <form action="" class="formulario_valvulas">
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label">Nombre de válvula</label>
-                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="valvula 1" name="name_valvula">
+                                <input type="text" class="form-control name_valvula" id="exampleFormControlInput1" placeholder="valvula 1" name="name_valvula">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label">Estado actual</label>
-                                <select class="form-select" aria-label="Default select example" name="status">
-                                    <option value="1">En recoleccion</option>
-                                    <option value="2">En crecimiento</option>
-                                    <option value="3">En mantenimiento</option>
+                                <select class="form-select status" aria-label="Default select example" name="status">
+                                    <option value="">Seleccione</option>
+                                    <option value="En recoleccion">En recoleccion</option>
+                                    <option value="En crecimiento">En crecimiento</option>
+                                    <option value="En mantenimiento">En mantenimiento</option>
                                 </select>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleFormControlTextarea1" class="form-label">comentarios</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="comments" ></textarea>
+                                <textarea class="form-control comments" id="exampleFormControlTextarea1" rows="3" name="comments" ></textarea>
                             </div>
                             <div class="mb-3">
-                                <button type="submit" class="btn btn-primary">Guardar</button>
-
+                                <input type="button" class="btn btn-primary add_valvula" value="Guardar" />
+                                <input type="button" class="btn btn-primary edit_valvula" value="Actualizar" />
                             </div>
 
                         </form>
@@ -85,61 +87,7 @@
                 <th scope="col">Opciones</th>
             </tr>
             </thead>
-            <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>valvula 1</td>
-                <td>En recolección</td>
-                <td>La fruta esta saliendo muy pequeña en esta valvúla</td>
-                <td>
-                    <button class="table_btn show">
-                        <img src="../img/show.png" alt="">
-                    </button>
-                    <button class="table_btn edit">
-                        <img src="../img/edit.png" alt="">
-                    </button>
-                    <button class="table_btn delete">
-                        <img src="../img/delete.png" alt="">
-                    </button>
-
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>valvula 2</td>
-                <td>En Crecimiento</td>
-                <td>Esta creciendo muy rapido</td>
-                <td>
-                    <button class="table_btn show">
-                        <img src="../img/show.png" alt="">
-                    </button>
-                    <button class="table_btn edit">
-                        <img src="../img/edit.png" alt="">
-                    </button>
-                    <button class="table_btn delete">
-                        <img src="../img/delete.png" alt="">
-                    </button>
-
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>valvula 3</td>
-                <td>En mantenimiento</td>
-                <td>Se estan realizando labores de fumigacion</td>
-                <td>
-                    <button class="table_btn show">
-                        <img src="../img/show.png" alt="">
-                    </button>
-                    <button class="table_btn edit">
-                        <img src="../img/edit.png" alt="">
-                    </button>
-                    <button class="table_btn delete">
-                        <img src="../img/delete.png" alt="">
-                    </button>
-
-                </td>
-            </tr>
+            <tbody class="cuerpo_tabla">
             </tbody>
         </table>
 
@@ -166,7 +114,7 @@
             </div>
 
 			<div class="container_text row align-items-center">
-			<p>hsecob@ibero.edu.co</p>
+			<p>hsecobla@ibero.edu.co</p>
 			<p>lrojash2@ibero.edu.co</p>
 			<p>Irodri32@ibero.edu.co</p>
 

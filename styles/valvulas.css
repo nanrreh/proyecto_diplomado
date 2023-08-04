@@ -4,3 +4,15 @@
 .main_valvulas {
     margin-top: 40px;
 }
+.hide_btn {
+    display: none;
+}
+
+.alert_msg {
+    position: absolute;
+    top: 150px;
+    right: 0;
+    width: 33%;
+    font-size: large;
+    font-weight: 500;
+}

@@ -4,23 +4,52 @@ require_once '../config/database.php';
 /** Todo::switch para seleccionar que opcion se debe usar (Registro, Usuarios)*/
 switch ($_REQUEST['opcion']) {
     case "create":
-        $sql=" insert into valvulas(nombre) values('".$_REQUEST['obj_valvula']['nombre']."')";
+        $sql=" insert into valvulas(nombre, estado, comentario) 
+                values('".$_REQUEST['nombre']."','".$_REQUEST['estado']."','".$_REQUEST['comentario']."')";
 
         $consulta=mysqli_query($conexion, $sql);
 
         if ($consulta)
-            echo 'Válvula creada';
+            echo 'true';
         else
-            echo 'Error en la creación de la válvula';
+            echo 'false';
         break;
     case "update":
-        echo "i es una barra";
+        $sql="
+                UPDATE valvulas
+                SET nombre = '".$_REQUEST['nombre']."', estado = '".$_REQUEST['estado']."', comentario = '".$_REQUEST['comentario']."'
+                WHERE id = '".$_REQUEST['id']."'
+        ";
+
+        $consulta=mysqli_query($conexion, $sql);
+
+        if ($consulta)
+            echo 'true';
+        else
+            echo 'false';
         break;
     case "delete":
-        echo "i es un pastel";
+        $sql="
+                delete from valvulas
+                WHERE id = '".$_REQUEST['id']."'
+        ";
+
+        $consulta=mysqli_query($conexion, $sql);
+
+        if ($consulta)
+            echo 'true';
+        else
+            echo 'false';
         break;
     case "show":
-        $sql="select nombre from valvulas";
+        $sql="select * from valvulas where id = '".$_REQUEST['id']."' ";
+
+        $consulta=mysqli_query($conexion, $sql);
+
+        echo json_encode(mysqli_fetch_assoc($consulta));
+        break;
+    case "admin":
+        $sql="select * from valvulas order by id desc";
 
         $consulta=mysqli_query($conexion, $sql);
 

@@ -112,24 +112,30 @@
     <div class="container footer_container">
         <div class="row align-items-center">
 		<b><p class="class="text-center">Nuestras redes sociales</p></b>
-            
-                
+
+
             <div class="container_img">
-                <img src="../img/fb.png" alt="">
-				<img src="../img/ig.png" alt="">
-				<img src="../img/ws.png" alt="">
+                <a href="https://www.facebook.com/" target="_blank">
+                    <img src="../img/fb.png" alt="">
+                </a>
+                <a href="https://www.instagram.com/" target="_blank">
+                    <img src="../img/ig.png" alt="">
+                </a>
+                <a href="https://web.whatsapp.com/" target="_blank">
+                    <img src="../img/ws.png" alt="">
+                </a>
             </div>
-			
+
 			<div class="container_text row align-items-center">
-			<b><p>hsecob@ibero.edu.co</p></b>
-			<b><p>lrojash2@ibero.edu.co</p></b>
-			<b><p>Irodri32@ibero.edu.co</p></b>
-			
+			<p>hsecob@ibero.edu.co</p>
+			<p>lrojash2@ibero.edu.co</p>
+			<p>Irodri32@ibero.edu.co</p>
+
 			<b><p>Boticampo © 2023. Todos los derechos reservados</p></b>
 			</div>
-			
-			
-			
+
+
+
         </div>
     </div>
 </footer>

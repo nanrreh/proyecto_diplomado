@@ -8,6 +8,8 @@
     <link rel="stylesheet" type="text/css" href="../styles/footer.css">
     <link rel="stylesheet" type="text/css" href="../styles/valvulas.css">
     <link rel="stylesheet" type="text/css" href="../styles/table.css">
+    <link rel="stylesheet" type="text/css" href="../styles/main.css">
+
     <script src="../js/valvulas.js"></script>
 </head>
 <body>
@@ -40,7 +42,7 @@
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" id="text_form" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseTwo">
+                    <button class="accordion-button collapsed btn_acordion" id="text_form" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseTwo">
                         Agregar valvula
                     </button>
                 </h2>
@@ -65,9 +67,9 @@
                                 <label for="exampleFormControlTextarea1" class="form-label">comentarios</label>
                                 <textarea class="form-control comments" id="exampleFormControlTextarea1" rows="3" name="comments" ></textarea>
                             </div>
-                            <div class="mb-3">
-                                <input type="button" class="btn btn-primary add_valvula" value="Guardar" />
-                                <input type="button" class="btn btn-primary edit_valvula" value="Actualizar" />
+                            <div class="mb-3 box_btn_form">
+                                <input type="button" class="btn btn-primary custom_btn add_valvula" value="Guardar" />
+                                <input type="button" class="btn btn-primary custom_btn edit_valvula" value="Actualizar" />
                             </div>
 
                         </form>

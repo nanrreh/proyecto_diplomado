@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Mukta:wght@400;700;800&family=Signika:wght@300;400;500;600;700&family=Work+Sans&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    font-family: 'Mukta', sans-serif;
+
+}
+h1 {
+    font-size: 25px;
+}
+h2 {
+    font-size: 20px;
+}
+p {
+    line-height: 16px;
+}
+.btn_acordion {
+    background-color: #8845bfe3;
+    color: white;
+    font-weight: bold;
+}
+.btn_acordion:focus {
+    border-color: #8845bfe3;
+    box-shadow: none;
+}
+.btn_acordion:not(.collapsed) {
+    background-color: #8845bf;
+    color: white;
+}
+.box_btn_form {
+    text-align: center;
+}
+.custom_btn {
+    background-color: #8845bfe3;
+    color: white;
+    min-width: 130px;
+    border: none;
+}
+.custom_btn:hover {
+    background-color: #8845bf;
+}

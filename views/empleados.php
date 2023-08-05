@@ -5,6 +5,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="../styles/menu.css">
+    <link rel="stylesheet" type="text/css" href="../styles/main.css">
     <link rel="stylesheet" type="text/css" href="../styles/footer.css">
     <link rel="stylesheet" type="text/css" href="../styles/empleados.css">
     <link rel="stylesheet" type="text/css" href="../styles/table.css">
@@ -40,7 +41,7 @@
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" id="text_form" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseTwo">
+                    <button class="accordion-button collapsed btn_acordion" id="text_form" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseTwo">
                         Agregar empleado
                     </button>
                 </h2>
@@ -48,21 +49,29 @@
                 <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <form action="" class="formulario_empleados">
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">Nombre de empleado</label>
-                                <input type="text" class="form-control name_empleado" id="exampleFormControlInput1" placeholder="Digite su nombre" name="name_empleado">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">Apellido de empleado</label>
-                                <input type="text" class="form-control lastname_empleado" id="exampleFormControlInput1" placeholder="Digite su apellido" name="lastname_empleado">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">Documento de empleado</label>
-                                <input type="text" class="form-control doc_empleado" id="exampleFormControlInput1" placeholder="Digite su documento" name="doc_empleado">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">Fecha de nacimiento</label>
-                                <input type="date" class="form-control date_empleado" id="exampleFormControlInput1" placeholder="Digite su Fecha de nacimiento" name="date_empleado">
+                            <div class="row align-items-start">
+                                <div class="col">
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlInput1" class="form-label">Nombre de empleado</label>
+                                        <input type="text" class="form-control name_empleado" id="exampleFormControlInput1" placeholder="Digite su nombre" name="name_empleado">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlInput1" class="form-label">Documento de empleado</label>
+                                        <input type="text" class="form-control doc_empleado" id="exampleFormControlInput1" placeholder="Digite su documento" name="doc_empleado">
+                                    </div>
+
+                                </div>
+                                <div class="col">
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlInput1" class="form-label">Apellido de empleado</label>
+                                        <input type="text" class="form-control lastname_empleado" id="exampleFormControlInput1" placeholder="Digite su apellido" name="lastname_empleado">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlInput1" class="form-label">Fecha de nacimiento</label>
+                                        <input type="date" class="form-control date_empleado" id="exampleFormControlInput1" placeholder="Digite su Fecha de nacimiento" name="date_empleado">
+                                    </div>
+
+                                </div>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label">Cargo</label>
@@ -73,9 +82,11 @@
                                     <option value="3">Lider de equipo</option>
                                 </select>
                             </div>
-                            <div class="mb-3">
-                                <input type="button" class="btn btn-primary add_empleado" value="Guardar" />
-                                <input type="button" class="btn btn-primary edit_empleado" value="Actualizar" />
+
+
+                            <div class="mb-3 box_btn_form">
+                                <input type="button" class="btn btn-primary add_empleado custom_btn" value="Guardar" />
+                                <input type="button" class="btn btn-primary edit_empleado custom_btn" value="Actualizar" />
                             </div>
 
                         </form>

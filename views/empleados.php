@@ -27,7 +27,8 @@
                     <a class="nav-link" href="valvulas.php">Válvulas</a>
                     <a class="nav-link active" href="empleados.php">Recolectores</a>
                     <a class="nav-link" href="#">Recolección</a>
-                    <a class="nav-link" href="#">roles</a>
+                    <a class="nav-link" href="#">Roles</a>
+                    <a class="nav-link btn_logout" href="/index.php"><img src="../img/logout.png"></a>
                 </div>
             </div>
         </div>
@@ -120,8 +121,6 @@
     <div class="container footer_container">
         <div class="row align-items-center">
             <b><p class="class="text-center">Nuestras redes sociales</p></b>
-
-
             <div class="container_img">
                 <a href="https://www.facebook.com/" target="_blank">
                     <img src="../img/fb.png" alt="">
@@ -133,7 +132,6 @@
                     <img src="../img/ws.png" alt="">
                 </a>
             </div>
-
             <div class="container_text row align-items-center">
                 <p>hsecobla@ibero.edu.co</p>
                 <p>lrojash2@ibero.edu.co</p>
@@ -141,9 +139,6 @@
 
                 <b><p>Boticampo © 2023. Todos los derechos reservados</p></b>
             </div>
-
-
-
         </div>
     </div>
 </footer>

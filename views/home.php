@@ -9,7 +9,31 @@
     <link rel="stylesheet" type="text/css" href="../styles/footer.css">
     <link rel="stylesheet" type="text/css" href="../styles/home.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.2/chart.min.js" integrity="sha512-csUso5vWY3PpIJkxLWFbPI7KkjXFhKXpUaAUp1ZLyNhxVWdQacEPH9e7Iw6Rco4es1uQNnlxdCCFkSnJ/f1ZzA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+    <script>
+        window.onload = function() {
 
+            var chart = new CanvasJS.Chart("chartContainer", {
+                animationEnabled: true,
+                title: {
+                    text: "Porcentaje cosecha"
+                },
+                data: [{
+                    type: "pie",
+                    startAngle: 240,
+                    yValueFormatString: "##0.00\"%\"",
+                    indexLabel: "{label} {y}",
+                    dataPoints: [
+                        {y: 30, label: "Junio"},
+                        {y: 30, label: "Agosto"},
+                        {y: 40, label: "Julio"},
+                    ]
+                }]
+            });
+            chart.render();
+
+        }
+    </script>
 </head>
 <body>
 <header>
@@ -24,10 +48,11 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link active" aria-current="page" href="home.php">Inicio</a>
-                    <a class="nav-link" href="valvulas.php">Valvúlas</a>
+                    <a class="nav-link" href="valvulas.php">Válvulas</a>
                     <a class="nav-link" href="empleados.php">Recolectores</a>
                     <a class="nav-link" href="#">Recolección</a>
-                    <a class="nav-link" href="#">roles</a>
+                    <a class="nav-link" href="#">Roles</a>
+                    <a class="nav-link btn_logout" href="/index.php"><img src="../img/logout.png"></a>
                 </div>
             </div>
         </div>
@@ -41,14 +66,14 @@
             <div class="col">
                 <h2 class="subtitle text-center">Promedios bajos</h2>
                 <ul class="list-group">
-                    <li class="list-group-item">Pablo Perez: 14kg</li>
-                    <li class="list-group-item">Maria Rojas: 13kg</li>
-                    <li class="list-group-item">Angelica Cortes: 13kg</li>
-                    <li class="list-group-item">Luis Rodriguez: 9kg</li>
-                    <li class="list-group-item">Daniel Perez: 8kg</li>
-                    <li class="list-group-item">Juliana Diaz: 7kg</li>
-                    <li class="list-group-item">Juliana Diaz: 7kg</li>
-                    <li class="list-group-item">Juliana Diaz: 7kg</li>
+                    <li class="list-group-item">Pablo Pérez: 7 kg</li>
+                    <li class="list-group-item">Maria Rojas: 8 kg</li>
+                    <li class="list-group-item">Angélica Cortes: 9 kg</li>
+                    <li class="list-group-item">Luis Rodríguez: 11 kg</li>
+                    <li class="list-group-item">Daniel Pérez: 13 kg</li>
+                    <li class="list-group-item">Juliana Díaz: 15 kg</li>
+                    <li class="list-group-item">Juliana Díaz: 16 kg</li>
+                    <li class="list-group-item">Juliana Díaz: 18 kg</li>
                 </ul>
             </div>
             <div class="col position-relative">
@@ -57,20 +82,20 @@
                     <div class="card silver">
                         <img src="../img/silver.png" alt="" class="medal">
                         <p class="name text-center">Maria Garcia</p>
-                        <p class="peso text-center">28px</p>
+                        <p class="peso text-center">26 kg</p>
                         <div class="base"></div>
                     </div>
                     <div class="card gold">
                         <img src="../img/gold.png" alt="" class="medal">
-                        <p class="name text-center">Maria Garcia</p>
-                        <p class="peso text-center">28px</p>
+                        <p class="name text-center">Juan Gómez</p>
+                        <p class="peso text-center">30 Kg</p>
                         <div class="base"></div>
 
                     </div>
                     <div class="card bronze">
                         <img src="../img/bronze.png" alt="" class="medal">
-                        <p class="name text-center">Maria Garcia</p>
-                        <p class="peso text-center">28px</p>
+                        <p class="name text-center">Luisa Ramírez</p>
+                        <p class="peso text-center">22 Kg</p>
                         <div class="base"></div>
 
                     </div>
@@ -78,7 +103,9 @@
             </div>
             <div class="col col_farmer">
                 <h2 class="subtitle text-center">Recolección mensual</h2>
-
+                <div>
+                    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+                </div>
             </div>
         </div>
     </div>

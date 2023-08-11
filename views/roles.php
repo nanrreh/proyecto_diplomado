@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,11 +6,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="../styles/menu.css">
-    <link rel="stylesheet" type="text/css" href="../styles/main.css">
     <link rel="stylesheet" type="text/css" href="../styles/footer.css">
-    <link rel="stylesheet" type="text/css" href="../styles/empleados.css">
+    <link rel="stylesheet" type="text/css" href="../styles/valvulas.css">
     <link rel="stylesheet" type="text/css" href="../styles/table.css">
-    <script src="../js/empleados.js"></script>
+    <link rel="stylesheet" type="text/css" href="../styles/main.css">
+
+    <script src="../js/valvulas.js"></script>
 </head>
 <body>
 <header>
@@ -25,9 +27,9 @@
                 <div class="navbar-nav">
                     <a class="nav-link" aria-current="page" href="home.php">Inicio</a>
                     <a class="nav-link" href="valvulas.php">Válvulas</a>
-                    <a class="nav-link active" href="empleados.php">Recolectores</a>
+                    <a class="nav-link" href="empleados.php">Recolectores</a>
                     <a class="nav-link" href="#">Recolección</a>
-                    <a class="nav-link" href="roles.php">Roles</a>
+                    <a class="nav-link active" href="#">Roles</a>
                     <a class="nav-link btn_logout" href="/index.php"><img src="../img/logout.png"></a>
                 </div>
             </div>
@@ -35,59 +37,29 @@
     </nav>
 </header>
 
-<main class="main_valvulas" id="main_empleado">
+<main class="main_valvulas" id="main_valvulas">
     <div class="container container_page">
-        <h1 class="main_title text-center">Empleados</h1>
+        <h1 class="main_title text-center">Gestión Roles</h1>
 
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed btn_acordion" id="text_form" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseTwo">
-                        Agregar empleado
+                        Agregar Rol
                     </button>
                 </h2>
                 <!--poner show para ver-->
                 <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <form action="" class="formulario_empleados">
-                            <div class="row align-items-start">
-                                <div class="col">
-                                    <div class="mb-3">
-                                        <label for="exampleFormControlInput1" class="form-label">Nombre de empleado</label>
-                                        <input type="text" class="form-control name_empleado" id="exampleFormControlInput1" placeholder="Digite su nombre" name="name_empleado">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="exampleFormControlInput1" class="form-label">Documento de empleado</label>
-                                        <input type="text" class="form-control doc_empleado" id="exampleFormControlInput1" placeholder="Digite su documento" name="doc_empleado">
-                                    </div>
-
-                                </div>
-                                <div class="col">
-                                    <div class="mb-3">
-                                        <label for="exampleFormControlInput1" class="form-label">Apellido de empleado</label>
-                                        <input type="text" class="form-control lastname_empleado" id="exampleFormControlInput1" placeholder="Digite su apellido" name="lastname_empleado">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="exampleFormControlInput1" class="form-label">Fecha de nacimiento</label>
-                                        <input type="date" class="form-control date_empleado" id="exampleFormControlInput1" placeholder="Digite su Fecha de nacimiento" name="date_empleado">
-                                    </div>
-
-                                </div>
-                            </div>
+                        <form action="" class="formulario_valvulas">
                             <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">Cargo</label>
-                                <select class="form-select cargo" aria-label="Default select example" name="cargo">
-                                    <option value="">Seleccione</option>
-                                    <option value="1">Administrador</option>
-                                    <option value="2">Empleado</option>
-                                    <option value="3">Lider de equipo</option>
-                                </select>
+                                <label for="exampleFormControlInput1" class="form-label">Nombre del Rol</label>
+                                <input type="text" class="form-control name_rol" id="exampleFormControlInput1" placeholder="Digite el nombre" name="name_rol">
                             </div>
-
 
                             <div class="mb-3 box_btn_form">
-                                <input type="button" class="btn btn-primary add_empleado custom_btn" value="Guardar" />
-                                <input type="button" class="btn btn-primary edit_empleado custom_btn" value="Actualizar" />
+                                <input type="button" class="btn btn-primary custom_btn add_valvula" value="Guardar" />
+                                <input type="button" class="btn btn-primary custom_btn edit_valvula" value="Actualizar" />
                             </div>
 
                         </form>
@@ -101,12 +73,8 @@
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nombres</th>
-                <th scope="col">Apellidos</th>
-                <th scope="col">Documento</th>
-                <th scope="col">Fecha de nacimiento</th>
-                <th scope="col">Cargo</th>
-                <th scope="col">Opciones</th>
+                <th scope="col">Nombre rol</th>
+                <th scope="col">Número de empleados</th>
             </tr>
             </thead>
             <tbody class="cuerpo_tabla">
@@ -136,7 +104,6 @@
                 <p>hsecobla@ibero.edu.co</p>
                 <p>lrojash2@ibero.edu.co</p>
                 <p>Irodri32@ibero.edu.co</p>
-
                 <b><p>Boticampo © 2023. Todos los derechos reservados</p></b>
             </div>
         </div>

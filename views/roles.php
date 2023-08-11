@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,10 +26,10 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link" aria-current="page" href="home.php">Inicio</a>
-                    <a class="nav-link active" href="valvulas.php">Válvulas</a>
+                    <a class="nav-link" href="valvulas.php">Válvulas</a>
                     <a class="nav-link" href="empleados.php">Recolectores</a>
                     <a class="nav-link" href="#">Recolección</a>
-                    <a class="nav-link" href="roles.php">Roles</a>
+                    <a class="nav-link active" href="#">Roles</a>
                     <a class="nav-link btn_logout" href="/index.php"><img src="../img/logout.png"></a>
                 </div>
             </div>
@@ -38,13 +39,13 @@
 
 <main class="main_valvulas" id="main_valvulas">
     <div class="container container_page">
-        <h1 class="main_title text-center">Válvulas</h1>
+        <h1 class="main_title text-center">Gestión Roles</h1>
 
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed btn_acordion" id="text_form" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseTwo">
-                        Agregar válvula
+                        Agregar Rol
                     </button>
                 </h2>
                 <!--poner show para ver-->
@@ -52,22 +53,10 @@
                     <div class="accordion-body">
                         <form action="" class="formulario_valvulas">
                             <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">Nombre de válvula</label>
-                                <input type="text" class="form-control name_valvula" id="exampleFormControlInput1" placeholder="Digite el nombre" name="name_valvula">
+                                <label for="exampleFormControlInput1" class="form-label">Nombre del Rol</label>
+                                <input type="text" class="form-control name_rol" id="exampleFormControlInput1" placeholder="Digite el nombre" name="name_rol">
                             </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">Estado actual</label>
-                                <select class="form-select status" aria-label="Default select example" name="status">
-                                    <option value="">Seleccione</option>
-                                    <option value="En recolección">En recolección</option>
-                                    <option value="En crecimiento">En crecimiento</option>
-                                    <option value="En mantenimiento">En mantenimiento</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlTextarea1" class="form-label">Comentarios</label>
-                                <textarea class="form-control comments" id="exampleFormControlTextarea1" rows="3" name="comments" ></textarea>
-                            </div>
+
                             <div class="mb-3 box_btn_form">
                                 <input type="button" class="btn btn-primary custom_btn add_valvula" value="Guardar" />
                                 <input type="button" class="btn btn-primary custom_btn edit_valvula" value="Actualizar" />
@@ -84,10 +73,8 @@
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Válvula</th>
-                <th scope="col">Estado</th>
-                <th scope="col">Comentarios</th>
-                <th scope="col">Opciones</th>
+                <th scope="col">Nombre rol</th>
+                <th scope="col">Número de empleados</th>
             </tr>
             </thead>
             <tbody class="cuerpo_tabla">
@@ -101,7 +88,7 @@
 <footer class="main_footer">
     <div class="container footer_container">
         <div class="row align-items-center">
-		<b><p class="class="text-center">Nuestras redes sociales</p></b>
+            <b><p class="class="text-center">Nuestras redes sociales</p></b>
             <div class="container_img">
                 <a href="https://www.facebook.com/" target="_blank">
                     <img src="../img/fb.png" alt="">
@@ -113,12 +100,12 @@
                     <img src="../img/ws.png" alt="">
                 </a>
             </div>
-			<div class="container_text row align-items-center">
-			<p>hsecobla@ibero.edu.co</p>
-			<p>lrojash2@ibero.edu.co</p>
-			<p>Irodri32@ibero.edu.co</p>
-			<b><p>Boticampo © 2023. Todos los derechos reservados</p></b>
-			</div>
+            <div class="container_text row align-items-center">
+                <p>hsecobla@ibero.edu.co</p>
+                <p>lrojash2@ibero.edu.co</p>
+                <p>Irodri32@ibero.edu.co</p>
+                <b><p>Boticampo © 2023. Todos los derechos reservados</p></b>
+            </div>
         </div>
     </div>
 </footer>

@@ -26,3 +26,12 @@
     border: 1px solid #ffffff;
     border-bottom-right-radius: 15px;
 }
+.btn_logout {
+    width: 40px;
+    height: 40px;
+}
+.btn_logout img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}

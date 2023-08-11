@@ -46,10 +46,12 @@ function fetchData() {
 //funcion para guardar la informacion
 function saveData(){
 
+    //Botones de validacion
     document.querySelector('.add_empleado').classList.remove('hide_btn');
     document.querySelector('.edit_empleado').classList.add('hide_btn');
 
     document.querySelector(".add_empleado").addEventListener("click", function() {
+
         var nombres = document.querySelector(".name_empleado").value;
         var apellidos = document.querySelector(".lastname_empleado").value;
         var documento = document.querySelector(".doc_empleado").value;
@@ -86,7 +88,7 @@ function saveData(){
                     setTimeout(function() {
                         node.remove();
                         window.location.reload();
-                    }, 1200);
+                    }, 2000);
                 } else {
                     node.className = "alert alert-danger alert_msg";
                     node.ariaRoleDescription = "alert";
@@ -95,7 +97,7 @@ function saveData(){
 
                     setTimeout(function() {
                         node.remove();
-                    }, 1200);
+                    }, 2000);
                 }
             })
             .catch(function(error) {
@@ -163,7 +165,7 @@ function updateData(id){
                     setTimeout(function() {
                         node.remove();
                         window.location.reload();
-                    }, 1200);
+                    }, 2000);
                 } else {
 
                     node.className = "alert alert-danger alert_msg";
@@ -251,7 +253,7 @@ function deleteData(id){
                     setTimeout(function() {
                         node.remove();
                         window.location.reload();
-                    }, 1200);
+                    }, 2000);
 
                 }else{
                     node.className = "alert alert-danger alert_msg";
@@ -261,7 +263,7 @@ function deleteData(id){
 
                     setTimeout(function() {
                         node.remove();
-                    }, 1200);
+                    }, 2000);
                 }
 
 

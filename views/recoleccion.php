@@ -25,8 +25,8 @@
                 <div class="navbar-nav">
                     <a class="nav-link" aria-current="page" href="home.php">Inicio</a>
                     <a class="nav-link" href="valvulas.php">Válvulas</a>
-                    <a class="nav-link active" href="empleados.php">Recolectores</a>
-                    <a class="nav-link" href="recoleccion.php">Recolección</a>
+                    <a class="nav-link" href="empleados.php">Recolectores</a>
+                    <a class="nav-link active" href="recoleccion.php">Recolección</a>
                     <a class="nav-link" href="roles.php">Roles</a>
                     <a class="nav-link btn_logout" href="/index.php"><img src="../img/logout.png"></a>
                 </div>
@@ -37,13 +37,13 @@
 
 <main class="main_valvulas" id="main_empleado">
     <div class="container container_page">
-        <h1 class="main_title text-center">Empleados</h1>
+        <h1 class="main_title text-center">Recolección semanal</h1>
 
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed btn_acordion" id="text_form" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseTwo">
-                        Agregar empleado
+                        Registro de recolección
                     </button>
                 </h2>
                 <!--poner show para ver-->
@@ -51,38 +51,58 @@
                     <div class="accordion-body">
                         <form action="" class="formulario_empleados">
                             <div class="row align-items-start">
+
+                                <div class="col">
+                                <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Nombre del recolector</label>
+                                <select class="form-select cargo" aria-label="Default select example" name="cargo">
+                                <option value="3">seleccionar</option>
+                                    <option value="">Pablo Pérez</option>
+                                    <option value="1">Maria Rojas</option>
+                                    <option value="2">Angelica Cortés</option>
+                                    <option value="3">Luis Rodriguez</option>
+                                    <option value="3">Daniel Pérez</option>
+                                    <option value="3">Juliana Díaz</option>
+                                </select>
+                                </div>
+
+
+                               
+                                <div class="mb-3">
+                                        <label for="exampleFormControlInput1" class="form-label">Cantidad recolectada</label>
+                                        <input type="text" class="form-control doc_empleado" id="exampleFormControlInput1" placeholder="Digite la cantidad (kg)" name="doc_empleado">
+                                    </div>
+                                </div>
+                                
+                            
                                 <div class="col">
                                     <div class="mb-3">
-                                        <label for="exampleFormControlInput1" class="form-label">Nombre de empleado</label>
-                                        <input type="text" class="form-control name_empleado" id="exampleFormControlInput1" placeholder="Digite su nombre" name="name_empleado">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="exampleFormControlInput1" class="form-label">Documento de empleado</label>
-                                        <input type="text" class="form-control doc_empleado" id="exampleFormControlInput1" placeholder="Digite su documento" name="doc_empleado">
-                                    </div>
-
+                                        <label for="exampleFormControlInput1" class="form-label">Válvulas</label>
+                                        <select class="form-select cargo" aria-label="Default select example" name="cargo">
+                                    <option value="">Seleccione</option>
+                                    <option value="1">Valvula 1</option>
+                                    <option value="2">Valvula 2</option>
+                                    <option value="3">Valvula 3</option>
+                                </select>
                                 </div>
-                                <div class="col">
-                                    <div class="mb-3">
-                                        <label for="exampleFormControlInput1" class="form-label">Apellido de empleado</label>
-                                        <input type="text" class="form-control lastname_empleado" id="exampleFormControlInput1" placeholder="Digite su apellido" name="lastname_empleado">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="exampleFormControlInput1" class="form-label">Fecha de nacimiento</label>
-                                        <input type="date" class="form-control date_empleado" id="exampleFormControlInput1" placeholder="Digite su Fecha de nacimiento" name="date_empleado">
-                                    </div>
 
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">Cargo</label>
+                                <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Personal a cargo</label>
                                 <select class="form-select cargo" aria-label="Default select example" name="cargo">
                                     <option value="">Seleccione</option>
                                     <option value="1">Administrador</option>
                                     <option value="2">Empleado</option>
                                     <option value="3">Lider de equipo</option>
+                                    <option value="3">Supervisor</option>
                                 </select>
                             </div>
+                            
+
+                                </div>
+
+                                </div>
+                            </div>
+
 
 
                             <div class="mb-3 box_btn_form">
@@ -101,12 +121,10 @@
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nombres</th>
-                <th scope="col">Apellidos</th>
-                <th scope="col">Documento</th>
-                <th scope="col">Fecha de nacimiento</th>
-                <th scope="col">Cargo</th>
-                <th scope="col">Opciones</th>
+                <th scope="col">Nombre de recolector</th>
+                <th scope="col">Válvulas</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Líder a cargo</th>
             </tr>
             </thead>
             <tbody class="cuerpo_tabla">

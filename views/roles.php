@@ -28,7 +28,7 @@
                     <a class="nav-link" aria-current="page" href="home.php">Inicio</a>
                     <a class="nav-link" href="valvulas.php">Válvulas</a>
                     <a class="nav-link" href="empleados.php">Recolectores</a>
-                    <a class="nav-link" href="#">Recolección</a>
+                    <a class="nav-link" href="recoleccion.php">Recolección</a>
                     <a class="nav-link active" href="#">Roles</a>
                     <a class="nav-link btn_logout" href="/index.php"><img src="../img/logout.png"></a>
                 </div>
@@ -103,7 +103,7 @@
             <div class="container_text row align-items-center">
                 <p>hsecobla@ibero.edu.co</p>
                 <p>lrojash2@ibero.edu.co</p>
-                <p>Irodri32@ibero.edu.co</p>
+                <p>irodri32@ibero.edu.co</p>
                 <b><p>Boticampo © 2023. Todos los derechos reservados</p></b>
             </div>
         </div>

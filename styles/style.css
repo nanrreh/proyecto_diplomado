@@ -76,3 +76,13 @@ body {
 .farmer.r_farmer{
     right: -50%;
 }
+
+.alert_msg {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    width: 33%;
+    font-size: large;
+    font-weight: 500;
+    transform: translate(-50%, 0);
+}

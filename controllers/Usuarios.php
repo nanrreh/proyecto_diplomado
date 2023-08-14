@@ -5,7 +5,7 @@ require_once '../config/database.php';
 switch ($_REQUEST['opcion']) {
     case "create":
         $sql="
-        insert into usuarios(nombres, apellidos, documento, fecha_nacimiento, cargo_id)
+        insert into empleados(nombres, apellidos, documento, fecha_nacimiento, cargo_id)
         values('".$_REQUEST['nombres']."','".$_REQUEST['apellidos']."','".$_REQUEST['documento']."','".$_REQUEST['fecha_nacimiento']."',".$_REQUEST['cargo'].")";
 
         $consulta=mysqli_query($conexion, $sql);
@@ -17,7 +17,7 @@ switch ($_REQUEST['opcion']) {
     break;
     case "update":
         $sql="
-                UPDATE usuarios
+                UPDATE empleados
                 SET 
                     nombres = '".$_REQUEST['nombres']."', 
                     apellidos = '".$_REQUEST['apellidos']."', 
@@ -36,7 +36,7 @@ switch ($_REQUEST['opcion']) {
     break;
     case "delete":
         $sql="
-                delete from usuarios
+                delete from empleados
                 WHERE id_usuario = '".$_REQUEST['id']."'
         ";
 
@@ -49,7 +49,7 @@ switch ($_REQUEST['opcion']) {
     break;
     case "show":
 
-        $sql="select * from usuarios where id_usuario = '".$_REQUEST['id']."' ";
+        $sql="select * from empleados where id_usuario = '".$_REQUEST['id']."' ";
 
         $consulta=mysqli_query($conexion, $sql);
 
@@ -58,7 +58,7 @@ switch ($_REQUEST['opcion']) {
     case "admin":
         $sql="
                 SELECT u.id_usuario, u.nombres, u.apellidos, u.documento, u.fecha_nacimiento, tc.nombre_cargo AS  cargo
-                FROM usuarios u 
+                FROM empleados u 
                 INNER JOIN tipo_cargo tc ON tc.id = u.cargo_id
                 ORDER BY id_usuario DESC
         ";

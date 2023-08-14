@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+
+if (!isset($_SESSION['username'])) {
+    header("Location: /index.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,7 +61,8 @@
                     <a class="nav-link" href="empleados.php">Recolectores</a>
                     <a class="nav-link" href="recoleccion.php">Recolección</a>
                     <a class="nav-link" href="roles.php">Roles</a>
-                    <a class="nav-link btn_logout" href="/index.php"><img src="../img/logout.png"></a>
+                    <a class="nav-link btn_logout" href="/controllers/Logout.php"><img src="../img/logout.png"></a>
+                    <a> <?php echo $_SESSION['username']; ?></a>
                 </div>
             </div>
         </div>

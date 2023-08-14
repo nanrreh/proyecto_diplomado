@@ -12,6 +12,30 @@ MySQL - 5.7.31 : Database - diplomado_web
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`diplomado_web` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+/*Table structure for table `empleados` */
+
+DROP TABLE IF EXISTS `empleados`;
+
+CREATE TABLE `empleados` (
+  `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
+  `nombres` varchar(55) NOT NULL,
+  `apellidos` varchar(55) NOT NULL,
+  `documento` int(11) NOT NULL,
+  `fecha_nacimiento` date DEFAULT NULL,
+  `cargo_id` int(11) NOT NULL,
+  PRIMARY KEY (`id_usuario`),
+  KEY `cargo_id` (`cargo_id`),
+  CONSTRAINT `empleados_ibfk_1` FOREIGN KEY (`cargo_id`) REFERENCES `tipo_cargo` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+/*Data for the table `empleados` */
+
+insert  into `empleados`(`id_usuario`,`nombres`,`apellidos`,`documento`,`fecha_nacimiento`,`cargo_id`) values 
+(4,'Hernan','Seco',213123,'2023-08-16',1),
+(10,'Laura','Rojas',213213213,'2023-08-15',2);
+
 /*Table structure for table `recoleccion` */
 
 DROP TABLE IF EXISTS `recoleccion`;
@@ -27,8 +51,8 @@ CREATE TABLE `recoleccion` (
   KEY `usuario_id` (`usuario_id`),
   KEY `encargado_id` (`encargado_id`),
   KEY `valvula_id` (`valvula_id`),
-  CONSTRAINT `recoleccion_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id_usuario`),
-  CONSTRAINT `recoleccion_ibfk_2` FOREIGN KEY (`encargado_id`) REFERENCES `usuarios` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `recoleccion_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `empleados` (`id_usuario`),
+  CONSTRAINT `recoleccion_ibfk_2` FOREIGN KEY (`encargado_id`) REFERENCES `empleados` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `recoleccion` */
@@ -55,21 +79,16 @@ insert  into `tipo_cargo`(`id`,`nombre_cargo`) values
 DROP TABLE IF EXISTS `usuarios`;
 
 CREATE TABLE `usuarios` (
-  `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
-  `nombres` varchar(55) NOT NULL,
-  `apellidos` varchar(55) NOT NULL,
-  `documento` int(11) NOT NULL,
-  `fecha_nacimiento` date DEFAULT NULL,
-  `cargo_id` int(11) NOT NULL,
-  PRIMARY KEY (`id_usuario`),
-  KEY `cargo_id` (`cargo_id`),
-  CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`cargo_id`) REFERENCES `tipo_cargo` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(55) DEFAULT NULL,
+  `password` varchar(555) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 /*Data for the table `usuarios` */
 
-insert  into `usuarios`(`id_usuario`,`nombres`,`apellidos`,`documento`,`fecha_nacimiento`,`cargo_id`) values 
-(4,'Hernan','Seco',213123,'2023-08-16',1);
+insert  into `usuarios`(`id`,`username`,`password`) values 
+(1,'nan','123');
 
 /*Table structure for table `valvulas` */
 
@@ -86,8 +105,8 @@ CREATE TABLE `valvulas` (
 /*Data for the table `valvulas` */
 
 insert  into `valvulas`(`id`,`nombre`,`estado`,`comentario`) values 
-(1,'valvula 12','En crecimiento','Esta en crecimiento se mejoro despues de la fumigacion'),
-(18,'valvula15','En recoleccion','Esta en recoleccion');
+(1,'valvula 12','En recolección','Esta en crecimiento se mejoro despues de la fumigacion'),
+(18,'valvula 12','En recolección','Esta en crecimiento se mejoro despues de la fumigacion');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

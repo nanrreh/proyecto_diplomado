@@ -21,7 +21,14 @@
                     <form action="" class="form_login">
                         <input type="text" placeholder="Correo" name="username" id="txt_username">
                         <input type="password" placeholder="Contraseña" name="password" id="txt_password">
-                        <input type="button" value="Entrar" class="btn_login">
+                        <div class="row">
+                            <div class="col">
+                                <input type="button" value="Login" class="btn_login">
+                            </div>
+                            <div class="col">
+                                <input type="button" value="Invitado" class="btn_login invitado">
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>

@@ -1,8 +1,13 @@
 <?php
 require_once '../config/database.php';
 
-
 session_start();
+
+if ($_POST['username'] == 'invitado'){
+    $_SESSION['username'] = $_POST['username'];
+    echo 'true';
+    exit;
+}
 
 // Recibir datos del formulario
 

@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once '../config/database.php';
 
 if (!isset($_SESSION['username'])) {
     header("Location: /index.php");
@@ -85,10 +86,19 @@ if (!isset($_SESSION['username'])) {
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label">Cargo</label>
                                 <select class="form-select cargo" aria-label="Default select example" name="cargo">
-                                    <option value="">Seleccione</option>
-                                    <option value="1">Administrador</option>
-                                    <option value="2">Empleado</option>
-                                    <option value="3">Lider de equipo</option>
+                                    <?php
+
+                                    $sql1 = "
+                                            SELECT * FROM tipo_cargo
+                                    ";
+
+                                    $consulta1=mysqli_query($conexion, $sql1);
+
+                                    echo '<option value="">Seleccionar</option>';
+                                    while ($fila = mysqli_fetch_assoc($consulta1)) {
+                                        echo "<option value=".$fila["id"].">". $fila["nombre_cargo"]. "</option>";
+                                    }
+                                    ?>
                                 </select>
                             </div>
 

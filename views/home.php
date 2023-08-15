@@ -56,11 +56,14 @@ if (!isset($_SESSION['username'])) {
             </button>
             <div class="collapse navbar-collapse menu_container" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
+
                     <a class="nav-link active" aria-current="page" href="home.php">Inicio</a>
-                    <a class="nav-link" href="valvulas.php">Válvulas</a>
-                    <a class="nav-link" href="empleados.php">Recolectores</a>
-                    <a class="nav-link" href="recoleccion.php">Recolección</a>
-                    <a class="nav-link" href="roles.php">Roles</a>
+                    <?php if ($_SESSION['username'] != 'invitado'){?>
+                        <a class="nav-link" href="valvulas.php">Válvulas</a>
+                        <a class="nav-link" href="empleados.php">Recolectores</a>
+                        <a class="nav-link" href="recoleccion.php">Recolección</a>
+                        <a class="nav-link" href="roles.php">Roles</a>
+                    <?php } ?>
 
                 </div>
                 <div class="sesion_info">

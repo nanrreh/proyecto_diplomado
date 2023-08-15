@@ -1,3 +1,7 @@
+<?php
+require_once '../config/database.php';
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../styles/footer.css">
     <link rel="stylesheet" type="text/css" href="../styles/empleados.css">
     <link rel="stylesheet" type="text/css" href="../styles/table.css">
-<!--    <script src="../js/empleados.js"></script>-->
+    <script src="../js/recoleccion.js"></script>
 </head>
 <body>
 <header>
@@ -43,7 +47,7 @@
             <div class="accordion-item">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed btn_acordion" id="text_form" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseTwo">
-                        Registro de recolección
+                        Agregar recolección
                     </button>
                 </h2>
                 <!--poner show para ver-->
@@ -55,14 +59,21 @@
                                 <div class="col">
                                 <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label">Nombre del recolector</label>
-                                <select class="form-select cargo" aria-label="Default select example" name="cargo">
-                                <option value="3">seleccionar</option>
-                                    <option value="">Pablo Pérez</option>
-                                    <option value="1">Maria Rojas</option>
-                                    <option value="2">Angelica Cortés</option>
-                                    <option value="3">Luis Rodriguez</option>
-                                    <option value="3">Daniel Pérez</option>
-                                    <option value="3">Juliana Díaz</option>
+                                <select class="form-select cargo" aria-label="Default select example" name="cargo" id="recolector">
+
+                                    <?php
+
+                                    $sql1 = "
+                                            SELECT * FROM empleados WHERE cargo_id = 2
+                                    ";
+
+                                    $consulta1=mysqli_query($conexion, $sql1);
+
+                                    echo '<option value="">Seleccionar</option>';
+                                    while ($fila = mysqli_fetch_assoc($consulta1)) {
+                                        echo "<option value=".$fila["id_usuario"].">". $fila["nombres"]. " ". $fila["apellidos"]."</option>";
+                                    }
+                                    ?>
                                 </select>
                                 </div>
 
@@ -70,7 +81,7 @@
 
                                 <div class="mb-3">
                                         <label for="exampleFormControlInput1" class="form-label">Cantidad recolectada</label>
-                                        <input type="text" class="form-control doc_empleado" id="exampleFormControlInput1" placeholder="Digite la cantidad (kg)" name="doc_empleado">
+                                        <input type="text" class="form-control doc_empleado cantidad" id="exampleFormControlInput1" placeholder="Digite la cantidad (kg)" name="doc_empleado">
                                     </div>
                                 </div>
 
@@ -78,22 +89,39 @@
                                 <div class="col">
                                     <div class="mb-3">
                                         <label for="exampleFormControlInput1" class="form-label">Válvulas</label>
-                                        <select class="form-select cargo" aria-label="Default select example" name="cargo">
-                                    <option value="">Seleccione</option>
-                                    <option value="1">Valvula 1</option>
-                                    <option value="2">Valvula 2</option>
-                                    <option value="3">Valvula 3</option>
-                                </select>
+                                        <select class="form-select cargo" aria-label="Default select example" name="cargo" id="valvula">
+                                            <?php
+
+                                            $sql = "
+                                                SELECT * FROM valvulas
+                                             ";
+
+                                            $consulta=mysqli_query($conexion, $sql);
+
+                                            echo '<option value="">Seleccionar</option>';
+                                                while ($fila = mysqli_fetch_assoc($consulta)) {
+                                                    echo "<option value=".$fila["id"].">". $fila["nombre"]. "</option>";
+                                                }
+                                            ?>
+                                        </select>
                                 </div>
 
                                 <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label">Personal a cargo</label>
-                                <select class="form-select cargo" aria-label="Default select example" name="cargo">
-                                    <option value="">Seleccione</option>
-                                    <option value="1">Administrador</option>
-                                    <option value="2">Empleado</option>
-                                    <option value="3">Lider de equipo</option>
-                                    <option value="3">Supervisor</option>
+                                <select class="form-select cargo" aria-label="Default select example" name="cargo" id="encargado">
+                                    <?php
+
+                                    $sql = "
+                                            SELECT * FROM empleados WHERE cargo_id = 3
+                                    ";
+
+                                    $consulta=mysqli_query($conexion, $sql);
+
+                                    echo '<option value="">Seleccionar</option>';
+                                    while ($fila = mysqli_fetch_assoc($consulta)) {
+                                        echo "<option value=".$fila["id_usuario"].">". $fila["nombres"]. " ". $fila["apellidos"]."</option>";
+                                    }
+                                    ?>
                                 </select>
                             </div>
 
@@ -120,10 +148,12 @@
             <thead>
             <tr>
                 <th scope="col">#</th>
+                <th scope="col">Fecha recolección</th>
                 <th scope="col">Nombre de recolector</th>
                 <th scope="col">Válvulas</th>
                 <th scope="col">Cantidad</th>
                 <th scope="col">Líder a cargo</th>
+                <th scope="col">Opciones</th>
             </tr>
             </thead>
             <tbody class="cuerpo_tabla">

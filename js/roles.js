@@ -1,11 +1,12 @@
 
+
 //Funcion para ver la informacion de la tabla
 function fetchData() {
 
     let data = new FormData();
     data.append("opcion", "admin")
 
-    fetch("/controllers/Empleados.php", {
+    fetch("/controllers/Roles.php", {
         method: "POST",
         body: data,
     })
@@ -17,20 +18,17 @@ function fetchData() {
             for (var i = 0; i < data.length; i++) {
                 var tr = `
                         <tr>
-                          <td>${data[i].id_usuario}</td>
-                          <td>${data[i].nombres}</td>
-                          <td>${data[i].apellidos}</td>
-                          <td>${data[i].documento}</td>
-                          <td>${data[i].fecha_nacimiento}</td>
-                          <td>${data[i].cargo}</td>
+                          <td>${data[i].id}</td>
+                          <td>${data[i].nombre_cargo}</td>
+                          <td>${data[i].nombre_cargo}</td>
                           <td>
-                            <button class="table_btn show" onclick="showData(${data[i].id_usuario})">
+                            <button class="table_btn show" onclick="showData(${data[i].id})">
                               <img src="../img/show.png" alt="">
                             </button>
-                            <button class="table_btn edit" onclick="updateData(${data[i].id_usuario})">
+                            <button class="table_btn edit" onclick="updateData(${data[i].id})">
                               <img src="../img/edit.png" alt="">
                             </button>
-                            <button class="table_btn delete" onclick="deleteData(${data[i].id_usuario})">
+                            <button class="table_btn delete" onclick="deleteData(${data[i].id})">
                               <img src="../img/delete.png" alt="">
                             </button>
                           </td>
@@ -46,28 +44,19 @@ function fetchData() {
 //funcion para guardar la informacion
 function saveData(){
 
-    //Botones de validacion
-    document.querySelector('.add_empleado').classList.remove('hide_btn');
-    document.querySelector('.edit_empleado').classList.add('hide_btn');
+    document.querySelector('.add_valvula').classList.remove('hide_btn');
+    document.querySelector('.edit_valvula').classList.add('hide_btn');
 
-    document.querySelector(".add_empleado").addEventListener("click", function() {
+    document.querySelector(".add_valvula").addEventListener("click", function() {
 
-        var nombres = document.querySelector(".name_empleado").value;
-        var apellidos = document.querySelector(".lastname_empleado").value;
-        var documento = document.querySelector(".doc_empleado").value;
-        var fecha_nacimiento = document.querySelector(".date_empleado").value;
-        var cargo = document.querySelector(".cargo").value;
+        var nombre = document.querySelector(".name_rol").value;
 
         let data = new FormData();
         data.append("opcion", "create");
-        data.append("nombres", nombres);
-        data.append("apellidos", apellidos);
-        data.append("documento", documento);
-        data.append("fecha_nacimiento", fecha_nacimiento);
-        data.append("cargo", cargo);
+        data.append("nombre", nombre);
 
         // Solicitud para registro de válvulas utilizando fetch
-        fetch("/controllers/Empleados.php", {
+        fetch("/controllers/Roles.php", {
             method: "POST",
             body: data,
         })
@@ -82,22 +71,22 @@ function saveData(){
                 if (data === true) {
                     node.className = "alert alert-success alert_msg";
                     node.ariaRoleDescription = "alert";
-                    node.innerText = "Se creó el usuario con éxito!!";
-                    document.getElementById('main_empleado').appendChild(node);
+                    node.innerText = "Se creó el rol con éxito!!";
+                    document.getElementById('main_valvulas').appendChild(node);
 
                     setTimeout(function() {
                         node.remove();
                         window.location.reload();
-                    }, 2000);
+                    }, 1200);
                 } else {
                     node.className = "alert alert-danger alert_msg";
                     node.ariaRoleDescription = "alert";
-                    node.innerText = "Error al crear el usuario";
-                    document.getElementById('main_empleado').appendChild(node);
+                    node.innerText = "Error al crear el rol";
+                    document.getElementById('main_valvulas').appendChild(node);
 
                     setTimeout(function() {
                         node.remove();
-                    }, 2000);
+                    }, 1200);
                 }
             })
             .catch(function(error) {
@@ -110,9 +99,10 @@ function saveData(){
 //funcion para modificar la informacion
 function updateData(id){
 
-    document.querySelector('.add_empleado').classList.add('hide_btn');
-    document.querySelector('.edit_empleado').classList.remove('hide_btn');
-    document.getElementById('text_form').innerText = "Actualizar empleado";
+    document.querySelector('.add_valvula').classList.add('hide_btn');
+    document.querySelector('.edit_valvula').classList.remove('hide_btn');
+
+    document.getElementById('text_form').innerText = "Actualizar Rol";
 
     document.querySelector('.accordion-button').classList.remove('collapsed');
     document.querySelector('.accordion-collapse').classList.add('show');
@@ -122,26 +112,18 @@ function updateData(id){
     showData(id, "update");
 
     //Evento click y envia la informacion
-    document.querySelector(".edit_empleado").addEventListener("click", function() {
+    document.querySelector(".edit_valvula").addEventListener("click", function() {
 
-        var nombres = document.querySelector(".name_empleado").value;
-        var apellidos = document.querySelector(".lastname_empleado").value;
-        var documento = document.querySelector(".doc_empleado").value;
-        var fecha_nacimiento = document.querySelector(".date_empleado").value;
-        var cargo = document.querySelector(".cargo").value;
+        var nombre = document.querySelector(".name_rol").value;
 
         let data = new FormData();
         data.append("opcion", "update");
-        data.append("nombres", nombres);
-        data.append("apellidos", apellidos);
-        data.append("documento", documento);
-        data.append("fecha_nacimiento", fecha_nacimiento);
-        data.append("cargo", cargo);
+        data.append("nombre", nombre);
         data.append("id", id);
 
-        //Solicitud para registro de empleados utilizando fetch
+        //Solicitud para registro de válvulas utilizando fetch
 
-        fetch("/controllers/Empleados.php", {
+        fetch("/controllers/Roles.php", {
             method: "POST",
             body: data,
         })
@@ -159,19 +141,19 @@ function updateData(id){
 
                     node.className = "alert alert-success alert_msg";
                     node.ariaRoleDescription = "alert";
-                    node.innerText = "Usuario modificado con exito";
-                    document.getElementById('main_empleado').appendChild(node);
+                    node.innerText = "Rol modificado con exito";
+                    document.getElementById('main_valvulas').appendChild(node);
 
                     setTimeout(function() {
                         node.remove();
                         window.location.reload();
-                    }, 2000);
+                    }, 1200);
                 } else {
 
                     node.className = "alert alert-danger alert_msg";
                     node.ariaRoleDescription = "alert";
-                    node.innerText = "Error al modificar el usuario";
-                    document.getElementById('main_empleado').appendChild(node);
+                    node.innerText = "Error al modificar el rol";
+                    document.getElementById('main_valvulas').appendChild(node);
 
                     setTimeout(function() {
                         node.remove();
@@ -189,9 +171,9 @@ function updateData(id){
 function showData(id, type){
 
     if (type != "update"){
-        document.querySelector('.add_empleado').classList.add('hide_btn');
-        document.querySelector('.edit_empleado').classList.add('hide_btn');
-        document.getElementById('text_form').innerText = "Ver Empleado";
+        document.querySelector('.add_valvula').classList.add('hide_btn');
+        document.querySelector('.edit_valvula').classList.add('hide_btn');
+        document.getElementById('text_form').innerText = "Ver rol";
 
         document.querySelector('.accordion-button').classList.remove('collapsed');
         document.querySelector('.accordion-collapse').classList.add('show');
@@ -201,7 +183,7 @@ function showData(id, type){
     data.append("opcion", "show")
     data.append("id", id)
 
-    fetch("/controllers/Empleados.php", {
+    fetch("/controllers/Roles.php", {
         method: "POST",
         body: data,
     })
@@ -211,11 +193,7 @@ function showData(id, type){
         .then(function (data) {
 
             // Recibimos toda la data para llenar la tabla de válvulas
-            document.querySelector(".name_empleado").value = data['nombres'];
-            document.querySelector(".lastname_empleado").value = data['apellidos'];
-            document.querySelector(".doc_empleado").value = data['documento'];
-            document.querySelector(".date_empleado").value = data['fecha_nacimiento'];
-            document.querySelector(".cargo").value = data['cargo_id'];
+            document.querySelector(".name_rol").value = data['nombre_cargo'];
 
         })
         .catch(function (error) {
@@ -233,7 +211,7 @@ function deleteData(id){
         data.append("opcion", "delete")
         data.append("id", id)
 
-        fetch("/controllers/Empleados.php", {
+        fetch("/controllers/Roles.php", {
             method: "POST",
             body: data,
         })
@@ -248,22 +226,22 @@ function deleteData(id){
                     node.className = "alert alert-success alert_msg";
                     node.ariaRoleDescription = "alert";
                     node.innerText = "Se elimino el registro correctamente";
-                    document.getElementById('main_empleado').appendChild(node);
+                    document.getElementById('main_valvulas').appendChild(node);
 
                     setTimeout(function() {
                         node.remove();
                         window.location.reload();
-                    }, 2000);
+                    }, 1200);
 
                 }else{
                     node.className = "alert alert-danger alert_msg";
                     node.ariaRoleDescription = "alert";
                     node.innerText = "Error! no se elimino el registro";
-                    document.getElementById('main_empleado').appendChild(node);
+                    document.getElementById('main_valvulas').appendChild(node);
 
                     setTimeout(function() {
                         node.remove();
-                    }, 2000);
+                    }, 1200);
                 }
 
 

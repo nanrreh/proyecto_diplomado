@@ -33,8 +33,8 @@ CREATE TABLE `empleados` (
 /*Data for the table `empleados` */
 
 insert  into `empleados`(`id_usuario`,`nombres`,`apellidos`,`documento`,`fecha_nacimiento`,`cargo_id`) values 
-(4,'Hernan','Seco',213123,'2023-08-16',1),
-(10,'Laura','Rojas',213213213,'2023-08-15',2);
+(4,'Hernan','Seco',213123,'2023-08-16',2),
+(10,'Laura','Rojas',213213213,'2023-08-15',3);
 
 /*Table structure for table `recoleccion` */
 
@@ -53,9 +53,12 @@ CREATE TABLE `recoleccion` (
   KEY `valvula_id` (`valvula_id`),
   CONSTRAINT `recoleccion_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `empleados` (`id_usuario`),
   CONSTRAINT `recoleccion_ibfk_2` FOREIGN KEY (`encargado_id`) REFERENCES `empleados` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 /*Data for the table `recoleccion` */
+
+insert  into `recoleccion`(`id`,`usuario_id`,`cantidad_fruta`,`fecha`,`encargado_id`,`valvula_id`) values 
+(1,4,23,'2023-08-15',10,1);
 
 /*Table structure for table `tipo_cargo` */
 
@@ -65,12 +68,11 @@ CREATE TABLE `tipo_cargo` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre_cargo` varchar(55) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tipo_cargo` */
 
 insert  into `tipo_cargo`(`id`,`nombre_cargo`) values 
-(1,'Administrador'),
 (2,'Empleado'),
 (3,'Lider de equipo');
 
@@ -88,7 +90,7 @@ CREATE TABLE `usuarios` (
 /*Data for the table `usuarios` */
 
 insert  into `usuarios`(`id`,`username`,`password`) values 
-(1,'nan','123');
+(1,'nan','123456');
 
 /*Table structure for table `valvulas` */
 
@@ -105,8 +107,8 @@ CREATE TABLE `valvulas` (
 /*Data for the table `valvulas` */
 
 insert  into `valvulas`(`id`,`nombre`,`estado`,`comentario`) values 
-(1,'valvula 12','En recolección','Esta en crecimiento se mejoro despues de la fumigacion'),
-(18,'valvula 12','En recolección','Esta en crecimiento se mejoro despues de la fumigacion');
+(1,'válvula 1','En recolección','Esta en crecimiento se mejoro despues de la fumigacion'),
+(18,'válvula 2','En recolección','Esta en crecimiento se mejoro despues de la fumigacion');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

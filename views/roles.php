@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="../styles/table.css">
     <link rel="stylesheet" type="text/css" href="../styles/main.css">
 
-    <script src="../js/valvulas.js"></script>
+<!--    <script src="../js/valvulas.js"></script>-->
 </head>
 <body>
 <header>

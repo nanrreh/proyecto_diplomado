@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../styles/footer.css">
     <link rel="stylesheet" type="text/css" href="../styles/empleados.css">
     <link rel="stylesheet" type="text/css" href="../styles/table.css">
-    <script src="../js/empleados.js"></script>
+<!--    <script src="../js/empleados.js"></script>-->
 </head>
 <body>
 <header>
@@ -67,14 +67,14 @@
                                 </div>
 
 
-                               
+
                                 <div class="mb-3">
                                         <label for="exampleFormControlInput1" class="form-label">Cantidad recolectada</label>
                                         <input type="text" class="form-control doc_empleado" id="exampleFormControlInput1" placeholder="Digite la cantidad (kg)" name="doc_empleado">
                                     </div>
                                 </div>
-                                
-                            
+
+
                                 <div class="col">
                                     <div class="mb-3">
                                         <label for="exampleFormControlInput1" class="form-label">Válvulas</label>
@@ -96,7 +96,7 @@
                                     <option value="3">Supervisor</option>
                                 </select>
                             </div>
-                            
+
 
                                 </div>
 
@@ -115,7 +115,6 @@
                     </div>
                 </div>
             </div>
-        </div>
 
         <table class="table">
             <thead>

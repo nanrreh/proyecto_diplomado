@@ -35,3 +35,11 @@
     height: auto;
     object-fit: contain;
 }
+.menu_container {
+    justify-content: space-between;
+}
+.sesion_info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}

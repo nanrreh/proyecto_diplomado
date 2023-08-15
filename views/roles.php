@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="../styles/table.css">
     <link rel="stylesheet" type="text/css" href="../styles/main.css">
 
-<!--    <script src="../js/valvulas.js"></script>-->
+    <script src="../js/roles.js"></script>
 </head>
 <body>
 <header>
@@ -75,6 +75,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Nombre rol</th>
                 <th scope="col">Número de empleados</th>
+                <th scope="col">Opciones</th>
             </tr>
             </thead>
             <tbody class="cuerpo_tabla">

@@ -96,23 +96,40 @@ if (!isset($_SESSION['username'])) {
                 <h2 class="subtitle text-center">Los mejores promedios</h2>
                 <div class="podio_raiting">
                     <div class="card silver">
-                        <img src="../img/silver.png" alt="" class="medal">
-                        <p class="name text-center">Maria Garcia</p>
-                        <p class="peso text-center">26 kg</p>
-                        <div class="base"></div>
+                        <img src="../img/person1.jpg" alt="" class="profile_picture">
+
+                        <div class="base">
+                            <img src="../img/silver.png" alt="" class="medal">
+                            <div class="group_text">
+                                <p class="name text-center">Maria Garcia</p>
+                                <p class="peso text-center">26 kg</p>
+                            </div>
+
+                        </div>
                     </div>
                     <div class="card gold">
-                        <img src="../img/gold.png" alt="" class="medal">
-                        <p class="name text-center">Juan Gómez</p>
-                        <p class="peso text-center">30 Kg</p>
-                        <div class="base"></div>
+                        <img src="../img/person2.jpg" alt="" class="profile_picture jumping-box">
+                        <div class="base">
+                            <img src="../img/gold.png" alt="" class="medal">
+                            <div class="group_text">
+                                <p class="name text-center">Juan Gómez</p>
+                                <p class="peso text-center">30 Kg</p>
+                            </div>
+
+                        </div>
 
                     </div>
                     <div class="card bronze">
-                        <img src="../img/bronze.png" alt="" class="medal">
-                        <p class="name text-center">Luisa Ramírez</p>
-                        <p class="peso text-center">22 Kg</p>
-                        <div class="base"></div>
+                        <img src="../img/person3.jpg" alt="" class="profile_picture">
+
+                        <div class="base">
+                            <img src="../img/bronze.png" alt="" class="medal">
+                            <div class="group_text">
+                                <p class="name text-center">Luisa Ramírez</p>
+                                <p class="peso text-center">22 Kg</p>
+                            </div>
+
+                        </div>
 
                     </div>
                 </div>

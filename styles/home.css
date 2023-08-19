@@ -75,39 +75,39 @@
     min-width: 150px;
     border: 2px white solid;
 }
-.card.silver .base {
+.card:nth-child(1) .base {
     height: 170px;
     padding: 5px;
 }
-.card.silver .profile_picture {
+.card:nth-child(1) .profile_picture {
     top: -30px;
 }
-.card.gold .profile_picture {
+.card:nth-child(2) .profile_picture {
     top: -60px;
 
 }
-.card.bronze .profile_picture {
+.card:nth-child(3) .profile_picture {
     top: -23px;
 }
-.card.gold .base {
+.card:nth-child(2) .base {
     height: 200px;
 }
-.card.bronze .base {
+.card:nth-child(3) .base {
     height: 160px;
 }
 .medal {
     filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
 }
-.card.silver .medal {
+.card:nth-child(1) .medal {
     position: relative;
     top: 12px;
 }
-.card.gold .medal {
+.card:nth-child(2) .medal {
     position: relative;
     top: -9px;
     z-index: 5;
 }
-.card.bronze .medal {
+.card:nth-child(3) .medal {
     position: relative;
     top: -13px;
     z-index: 5;
@@ -132,5 +132,14 @@
     }
     50% {
         transform: translateY(-10px); /* Punto más alto del salto */
+    }
+}
+@media only screen and (max-width: 1330px) {
+    .content_home {
+        flex-direction: column;
+    }
+    .container_podio {
+        min-height: 350px;
+        margin-bottom: 40px;
     }
 }

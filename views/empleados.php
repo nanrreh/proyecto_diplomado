@@ -30,14 +30,21 @@ if (!isset($_SESSION['username'])) {
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="collapse navbar-collapse menu_container" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" aria-current="page" href="home.php">Inicio</a>
-                    <a class="nav-link" href="valvulas.php">Válvulas</a>
-                    <a class="nav-link active" href="empleados.php">Recolectores</a>
-                    <a class="nav-link" href="recoleccion.php">Recolección</a>
-                    <a class="nav-link" href="roles.php">Roles</a>
-                    <a class="nav-link btn_logout" href="/index.php"><img src="../img/logout.png"></a>
+
+                    <a class="nav-link" href="home.php">Inicio</a>
+                    <?php if ($_SESSION['username'] != 'invitado'){?>
+                        <a class="nav-link" href="valvulas.php">Válvulas</a>
+                        <a class="nav-link active" aria-current="page" href="empleados.php">Recolectores</a>
+                        <a class="nav-link" href="recoleccion.php">Recolección</a>
+                        <a class="nav-link" href="roles.php">Roles</a>
+                    <?php } ?>
+
+                </div>
+                <div class="sesion_info">
+                    <a class="nav-link"> Hola!  <?php echo $_SESSION['username']; ?></a>
+                    <a class="nav-link btn_logout" href="/controllers/Logout.php"><img src="../img/logout.png"></a>
                 </div>
             </div>
         </div>

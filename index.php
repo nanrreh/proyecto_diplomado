@@ -11,7 +11,7 @@
 
 <main class="main_login" id="main_login">
     <div class="container text-center position-relative full_w">
-        <div class="row align-items-center">
+        <div class="row align-items-center container_login">
             <div class="col col_farmer">
                 <img src="img/farmer.png" alt="" class="l_farmer farmer">
             </div>

@@ -86,3 +86,17 @@ body {
     font-weight: 500;
     transform: translate(-50%, 0);
 }
+@media only screen and (max-width: 980px) {
+    .container_login {
+        flex-direction: column;
+    }
+    .box_login {
+        margin: auto;
+    }
+    .main_login {
+        overflow: hidden;
+    }
+    .col_farmer {
+        display: none;
+    }
+}

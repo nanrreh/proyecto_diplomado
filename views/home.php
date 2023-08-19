@@ -78,7 +78,7 @@ if (!isset($_SESSION['username'])) {
 <main class="main_home">
     <div class="container text-center container_columns">
         <h1 class="main_title text-center">Resumen</h1>
-        <div class="row">
+        <div class="row content_home">
             <div class="col">
                 <h2 class="subtitle text-center">Promedios bajos</h2>
                 <ul class="list-group">
@@ -92,27 +92,44 @@ if (!isset($_SESSION['username'])) {
                     <li class="list-group-item">Juliana Díaz: 18 kg</li>
                 </ul>
             </div>
-            <div class="col position-relative">
+            <div class="col position-relative container_podio">
                 <h2 class="subtitle text-center">Los mejores promedios</h2>
                 <div class="podio_raiting">
-                    <div class="card silver">
-                        <img src="../img/silver.png" alt="" class="medal">
-                        <p class="name text-center">Maria Garcia</p>
-                        <p class="peso text-center">26 kg</p>
-                        <div class="base"></div>
+                    <div class="card">
+                        <img src="../img/person1.jpg" alt="" class="profile_picture">
+
+                        <div class="base">
+                            <img src="../img/silver.png" alt="" class="medal">
+                            <div class="group_text">
+                                <p class="name text-center">Maria Garcia</p>
+                                <p class="peso text-center">26 kg</p>
+                            </div>
+
+                        </div>
                     </div>
-                    <div class="card gold">
-                        <img src="../img/gold.png" alt="" class="medal">
-                        <p class="name text-center">Juan Gómez</p>
-                        <p class="peso text-center">30 Kg</p>
-                        <div class="base"></div>
+                    <div class="card">
+                        <img src="../img/person2.jpg" alt="" class="profile_picture jumping-box">
+                        <div class="base">
+                            <img src="../img/gold.png" alt="" class="medal">
+                            <div class="group_text">
+                                <p class="name text-center">Juan Gómez</p>
+                                <p class="peso text-center">30 Kg</p>
+                            </div>
+
+                        </div>
 
                     </div>
-                    <div class="card bronze">
-                        <img src="../img/bronze.png" alt="" class="medal">
-                        <p class="name text-center">Luisa Ramírez</p>
-                        <p class="peso text-center">22 Kg</p>
-                        <div class="base"></div>
+                    <div class="card">
+                        <img src="../img/person3.jpg" alt="" class="profile_picture">
+
+                        <div class="base">
+                            <img src="../img/bronze.png" alt="" class="medal">
+                            <div class="group_text">
+                                <p class="name text-center">Luisa Ramírez</p>
+                                <p class="peso text-center">22 Kg</p>
+                            </div>
+
+                        </div>
 
                     </div>
                 </div>

@@ -36,7 +36,7 @@ if (!isset($_SESSION['username'])) {
                     <a class="nav-link" href="home.php">Inicio</a>
                     <?php if ($_SESSION['username'] != 'invitado'){?>
                         <a class="nav-link" href="valvulas.php">Válvulas</a>
-                        <a class="nav-link active" aria-current="page" href="empleados.php">Recolectores</a>
+                        <a class="nav-link active" aria-current="page" href="empleados.php">Empleados</a>
                         <a class="nav-link" href="recoleccion.php">Recolección</a>
                         <a class="nav-link" href="roles.php">Roles</a>
                     <?php } ?>
@@ -65,7 +65,7 @@ if (!isset($_SESSION['username'])) {
                 <!--poner show para ver-->
                 <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <form action="" class="formulario_empleados">
+                        <form action="" enctype="multipart/form-data" class="formulario_empleados">
                             <div class="row align-items-start">
                                 <div class="col">
                                     <div class="mb-3">
@@ -75,6 +75,24 @@ if (!isset($_SESSION['username'])) {
                                     <div class="mb-3">
                                         <label for="exampleFormControlInput1" class="form-label">Documento de empleado</label>
                                         <input type="text" class="form-control doc_empleado" id="exampleFormControlInput1" placeholder="Digite su documento" name="doc_empleado">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlInput1" class="form-label">Cargo</label>
+                                        <select class="form-select cargo" aria-label="Default select example" name="cargo">
+                                            <?php
+
+                                            $sql1 = "
+                                            SELECT * FROM tipo_cargo
+                                    ";
+
+                                            $consulta1=mysqli_query($conexion, $sql1);
+
+                                            echo '<option value="">Seleccionar</option>';
+                                            while ($fila = mysqli_fetch_assoc($consulta1)) {
+                                                echo "<option value=".$fila["id"].">". $fila["nombre_cargo"]. "</option>";
+                                            }
+                                            ?>
+                                        </select>
                                     </div>
 
                                 </div>
@@ -87,27 +105,15 @@ if (!isset($_SESSION['username'])) {
                                         <label for="exampleFormControlInput1" class="form-label">Fecha de nacimiento</label>
                                         <input type="date" class="form-control date_empleado" id="exampleFormControlInput1" placeholder="Digite su Fecha de nacimiento" name="date_empleado">
                                     </div>
+                                    <div class="mb-3">
+                                        <label for="formFile" class="form-label photo_label">Subir foto</label>
+                                        <input class="form-control photo_txt" name="file" type="file" id="formFile">
+                                        <img style="width: 100px" id="img_path" src="">
+                                    </div>
 
                                 </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">Cargo</label>
-                                <select class="form-select cargo" aria-label="Default select example" name="cargo">
-                                    <?php
 
-                                    $sql1 = "
-                                            SELECT * FROM tipo_cargo
-                                    ";
-
-                                    $consulta1=mysqli_query($conexion, $sql1);
-
-                                    echo '<option value="">Seleccionar</option>';
-                                    while ($fila = mysqli_fetch_assoc($consulta1)) {
-                                        echo "<option value=".$fila["id"].">". $fila["nombre_cargo"]. "</option>";
-                                    }
-                                    ?>
-                                </select>
-                            </div>
 
 
                             <div class="mb-3 box_btn_form">
@@ -131,6 +137,7 @@ if (!isset($_SESSION['username'])) {
                 <th scope="col">Documento</th>
                 <th scope="col">Fecha de nacimiento</th>
                 <th scope="col">Cargo</th>
+                <th scope="col">Imagen</th>
                 <th scope="col">Opciones</th>
             </tr>
             </thead>

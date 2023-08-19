@@ -36,7 +36,7 @@ if (!isset($_SESSION['username'])) {
                     <a class="nav-link" href="home.php">Inicio</a>
                     <?php if ($_SESSION['username'] != 'invitado'){?>
                         <a class="nav-link" href="valvulas.php">Válvulas</a>
-                        <a class="nav-link" href="empleados.php">Recolectores</a>
+                        <a class="nav-link" href="empleados.php">Empleados</a>
                         <a class="nav-link" href="recoleccion.php">Recolección</a>
                         <a class="nav-link active" aria-current="page" href="roles.php">Roles</a>
                     <?php } ?>

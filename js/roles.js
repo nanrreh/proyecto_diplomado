@@ -20,7 +20,7 @@ function fetchData() {
                         <tr>
                           <td>${data[i].id}</td>
                           <td>${data[i].nombre_cargo}</td>
-                          <td>${data[i].nombre_cargo}</td>
+                          <td>${data[i].cantidad}</td>
                           <td>
                             <button class="table_btn show" onclick="showData(${data[i].id})">
                               <img src="../img/show.png" alt="">

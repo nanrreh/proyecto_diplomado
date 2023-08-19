@@ -23,6 +23,7 @@ function fetchData() {
                           <td>${data[i].documento}</td>
                           <td>${data[i].fecha_nacimiento}</td>
                           <td>${data[i].cargo}</td>
+                          <td><img src="${data[i].path}" style="width: 50px"></td>
                           <td>
                             <button class="table_btn show" onclick="showData(${data[i].id_usuario})">
                               <img src="../img/show.png" alt="">
@@ -49,6 +50,9 @@ function saveData(){
     //Botones de validacion
     document.querySelector('.add_empleado').classList.remove('hide_btn');
     document.querySelector('.edit_empleado').classList.add('hide_btn');
+    document.querySelector('.photo_label').classList.remove('hide_btn');
+    document.querySelector('.photo_txt').classList.remove('hide_btn');
+    document.getElementById('img_path').classList.add('hide_btn');
 
     document.querySelector(".add_empleado").addEventListener("click", function() {
 
@@ -58,6 +62,9 @@ function saveData(){
         var fecha_nacimiento = document.querySelector(".date_empleado").value;
         var cargo = document.querySelector(".cargo").value;
 
+        var image = document.getElementById('formFile');
+
+
         let data = new FormData();
         data.append("opcion", "create");
         data.append("nombres", nombres);
@@ -65,6 +72,7 @@ function saveData(){
         data.append("documento", documento);
         data.append("fecha_nacimiento", fecha_nacimiento);
         data.append("cargo", cargo);
+        data.append('image', image.files[0]);
 
         // Solicitud para registro de válvulas utilizando fetch
         fetch("/controllers/Empleados.php", {
@@ -112,6 +120,9 @@ function updateData(id){
 
     document.querySelector('.add_empleado').classList.add('hide_btn');
     document.querySelector('.edit_empleado').classList.remove('hide_btn');
+    document.querySelector('.photo_label').classList.remove('hide_btn');
+    document.querySelector('.photo_txt').classList.remove('hide_btn');
+    document.getElementById('img_path').classList.add('hide_btn');
     document.getElementById('text_form').innerText = "Actualizar empleado";
 
     document.querySelector('.accordion-button').classList.remove('collapsed');
@@ -129,6 +140,7 @@ function updateData(id){
         var documento = document.querySelector(".doc_empleado").value;
         var fecha_nacimiento = document.querySelector(".date_empleado").value;
         var cargo = document.querySelector(".cargo").value;
+        var image = document.getElementById('formFile');
 
         let data = new FormData();
         data.append("opcion", "update");
@@ -137,6 +149,7 @@ function updateData(id){
         data.append("documento", documento);
         data.append("fecha_nacimiento", fecha_nacimiento);
         data.append("cargo", cargo);
+        data.append('image', image.files[0]);
         data.append("id", id);
 
         //Solicitud para registro de empleados utilizando fetch
@@ -191,6 +204,10 @@ function showData(id, type){
     if (type != "update"){
         document.querySelector('.add_empleado').classList.add('hide_btn');
         document.querySelector('.edit_empleado').classList.add('hide_btn');
+        document.querySelector('.photo_label').classList.add('hide_btn');
+        document.querySelector('.photo_txt').classList.add('hide_btn');
+        document.getElementById('img_path').classList.remove('hide_btn');
+
         document.getElementById('text_form').innerText = "Ver Empleado";
 
         document.querySelector('.accordion-button').classList.remove('collapsed');
@@ -216,6 +233,7 @@ function showData(id, type){
             document.querySelector(".doc_empleado").value = data['documento'];
             document.querySelector(".date_empleado").value = data['fecha_nacimiento'];
             document.querySelector(".cargo").value = data['cargo_id'];
+            document.getElementById('img_path').src = data['path'];
 
         })
         .catch(function (error) {

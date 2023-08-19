@@ -17,32 +17,7 @@ if (!isset($_SESSION['username'])) {
     <link rel="stylesheet" type="text/css" href="../styles/main.css">
     <link rel="stylesheet" type="text/css" href="../styles/footer.css">
     <link rel="stylesheet" type="text/css" href="../styles/home.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.2/chart.min.js" integrity="sha512-csUso5vWY3PpIJkxLWFbPI7KkjXFhKXpUaAUp1ZLyNhxVWdQacEPH9e7Iw6Rco4es1uQNnlxdCCFkSnJ/f1ZzA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
-    <script>
-        window.onload = function() {
-
-            var chart = new CanvasJS.Chart("chartContainer", {
-                animationEnabled: true,
-                title: {
-                    text: "Porcentaje cosecha"
-                },
-                data: [{
-                    type: "pie",
-                    startAngle: 240,
-                    yValueFormatString: "##0.00\"%\"",
-                    indexLabel: "{label} {y}",
-                    dataPoints: [
-                        {y: 30, label: "Junio"},
-                        {y: 30, label: "Agosto"},
-                        {y: 40, label: "Julio"},
-                    ]
-                }]
-            });
-            chart.render();
-
-        }
-    </script>
+    <script src="../js/home.js"></script>
 </head>
 <body>
 <header>
@@ -60,7 +35,7 @@ if (!isset($_SESSION['username'])) {
                     <a class="nav-link active" aria-current="page" href="home.php">Inicio</a>
                     <?php if ($_SESSION['username'] != 'invitado'){?>
                         <a class="nav-link" href="valvulas.php">Válvulas</a>
-                        <a class="nav-link" href="empleados.php">Recolectores</a>
+                        <a class="nav-link" href="empleados.php">Empleados</a>
                         <a class="nav-link" href="recoleccion.php">Recolección</a>
                         <a class="nav-link" href="roles.php">Roles</a>
                     <?php } ?>
@@ -81,52 +56,44 @@ if (!isset($_SESSION['username'])) {
         <div class="row content_home">
             <div class="col">
                 <h2 class="subtitle text-center">Promedios bajos</h2>
-                <ul class="list-group">
-                    <li class="list-group-item">Pablo Pérez: 7 kg</li>
-                    <li class="list-group-item">Maria Rojas: 8 kg</li>
-                    <li class="list-group-item">Angélica Cortes: 9 kg</li>
-                    <li class="list-group-item">Luis Rodríguez: 11 kg</li>
-                    <li class="list-group-item">Daniel Pérez: 13 kg</li>
-                    <li class="list-group-item">Juliana Díaz: 15 kg</li>
-                    <li class="list-group-item">Juliana Díaz: 16 kg</li>
-                    <li class="list-group-item">Juliana Díaz: 18 kg</li>
+                <ul class="list-group cuerpo_lista">
                 </ul>
             </div>
             <div class="col position-relative container_podio">
                 <h2 class="subtitle text-center">Los mejores promedios</h2>
                 <div class="podio_raiting">
-                    <div class="card">
-                        <img src="../img/person1.jpg" alt="" class="profile_picture">
+                    <div class="card" id="card_2">
+                        <img src="" alt="" class="profile_picture">
 
                         <div class="base">
                             <img src="../img/silver.png" alt="" class="medal">
                             <div class="group_text">
-                                <p class="name text-center">Maria Garcia</p>
-                                <p class="peso text-center">26 kg</p>
+                                <p class="name text-center"></p>
+                                <p class="peso text-center"></p>
                             </div>
 
                         </div>
                     </div>
-                    <div class="card">
-                        <img src="../img/person2.jpg" alt="" class="profile_picture jumping-box">
+                    <div class="card" id="card_1">
+                        <img src="" alt="" class="profile_picture jumping-box">
                         <div class="base">
                             <img src="../img/gold.png" alt="" class="medal">
                             <div class="group_text">
-                                <p class="name text-center">Juan Gómez</p>
-                                <p class="peso text-center">30 Kg</p>
+                                <p class="name text-center"></p>
+                                <p class="peso text-center"></p>
                             </div>
 
                         </div>
 
                     </div>
-                    <div class="card">
-                        <img src="../img/person3.jpg" alt="" class="profile_picture">
+                    <div class="card" id="card_3">
+                        <img src="" alt="" class="profile_picture">
 
                         <div class="base">
                             <img src="../img/bronze.png" alt="" class="medal">
                             <div class="group_text">
-                                <p class="name text-center">Luisa Ramírez</p>
-                                <p class="peso text-center">22 Kg</p>
+                                <p class="name text-center"></p>
+                                <p class="peso text-center"></p>
                             </div>
 
                         </div>
@@ -135,9 +102,26 @@ if (!isset($_SESSION['username'])) {
                 </div>
             </div>
             <div class="col col_farmer">
-                <h2 class="subtitle text-center">Recolección mensual</h2>
+                <h2 class="subtitle text-center">Conoce el empleado del mes</h2>
                 <div>
-                    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+                    <button type="button" class="reset_style"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <img src="../img/champion-the-best.gif">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade modal-lg modal_winner" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-body black_body">
+                    <button type="button" class="btn-close btn_close_modal" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                    <img src="../img/bg_winner.jpg" class="img_bgwinner">
+                    <img src="../img/person2.jpg" class="img_photowinner">
+                    <h2 class="name_winner">Hernan Seco</h2>
                 </div>
             </div>
         </div>

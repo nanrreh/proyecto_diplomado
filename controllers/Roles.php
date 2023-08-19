@@ -49,7 +49,12 @@ switch ($_REQUEST['opcion']) {
         echo json_encode(mysqli_fetch_assoc($consulta));
         break;
     case "admin":
-        $sql="select * from tipo_cargo order by id desc";
+        $sql="
+            SELECT tc.id, tc.nombre_cargo, COUNT(*) AS cantidad from tipo_cargo tc
+            INNER JOIN empleados e ON e.cargo_id = tc.id
+            GROUP BY tc.nombre_cargo
+            order by tc.id desc
+        ";
 
         $consulta=mysqli_query($conexion, $sql);
 

@@ -46,6 +46,7 @@
     border-radius: 50%;
     position: absolute;
     border: solid 7px #ffffff;
+    object-fit: cover;
 }
 .podio_raiting .card{
     border: none;
@@ -126,6 +127,54 @@
 .jumping-box {
     animation: jumpAnimation 2s infinite; /* Animación de 1 segundo, infinitamente repetida */
 }
+
+.reset_style {
+    all: initial;
+}
+.img_bgwinner {
+    width: 100%;
+    border-radius: 30px;
+}
+.modal_winner .modal-content {
+    border-radius: 30px;
+}
+.black_body {
+    border-radius: 30px;
+    background-color: black;
+    padding: 0;
+}
+.btn_close_modal {
+    background-color: #ffffff;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    padding: 10px;
+}
+.img_photowinner {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    width: 350px;
+    height: 350px;
+    top: 49%;
+    border-radius: 50%;
+    border: 10px solid #ffffff;
+    object-fit: cover;
+}
+.name_winner {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    position: absolute;
+    left: 50%;
+    bottom: 22%;
+    transform: translate(-50%, 0px);
+    border: 6px solid #ff8736;
+    background-color: black;
+    padding: 10px 20px;
+    border-radius: 30px;
+}
+
 @keyframes jumpAnimation {
     0%, 100% {
         transform: translateY(0); /* Posición inicial y final */

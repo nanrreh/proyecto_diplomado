@@ -36,7 +36,7 @@ if (!isset($_SESSION['username'])) {
                     <a class="nav-link" href="home.php">Inicio</a>
                     <?php if ($_SESSION['username'] != 'invitado'){?>
                         <a class="nav-link" href="valvulas.php">Válvulas</a>
-                        <a class="nav-link" href="empleados.php">Recolectores</a>
+                        <a class="nav-link" href="empleados.php">Empleados</a>
                         <a class="nav-link active" aria-current="page" href="recoleccion.php">Recolección</a>
                         <a class="nav-link" href="roles.php">Roles</a>
                     <?php } ?>
@@ -53,7 +53,7 @@ if (!isset($_SESSION['username'])) {
 
 <main class="main_valvulas" id="main_empleado">
     <div class="container container_page">
-        <h1 class="main_title text-center">Recolección semanal</h1>
+        <h1 class="main_title text-center">Recolección</h1>
 
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">

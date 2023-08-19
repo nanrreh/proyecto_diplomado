@@ -40,8 +40,16 @@
     bottom: 0px;
     transform: translateX(-50%);
 }
+.profile_picture {
+    width: 120px !important;
+    height: 120px;
+    border-radius: 50%;
+    position: absolute;
+    border: solid 7px #ffffff;
+}
 .podio_raiting .card{
     border: none;
+    position: relative;
 }
 .podio_raiting img {
     width: 100px;
@@ -50,24 +58,88 @@
     margin-bottom: 0;
     padding-left: 10px;
     padding-right: 10px;
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 2px 2px #75585880;
 }
 .podio_raiting .card {
     justify-content: flex-end;
     align-items: center;
 }
 .base {
-    background-color: black;
+    background-color: #a2a0a0;
     width: 100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    margin-top: 20px;
+    padding: 25px 5px;
+    min-width: 150px;
+    border: 2px white solid;
 }
-.card.silver .base {
-    height: 70px;
+.card:nth-child(1) .base {
+    height: 170px;
+    padding: 5px;
 }
-.card.gold .base {
-    height: 100px;
+.card:nth-child(1) .profile_picture {
+    top: -30px;
 }
-.card.bronze .base {
-    height: 50px;
+.card:nth-child(2) .profile_picture {
+    top: -60px;
+
+}
+.card:nth-child(3) .profile_picture {
+    top: -23px;
+}
+.card:nth-child(2) .base {
+    height: 200px;
+}
+.card:nth-child(3) .base {
+    height: 160px;
+}
+.medal {
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+}
+.card:nth-child(1) .medal {
+    position: relative;
+    top: 12px;
+}
+.card:nth-child(2) .medal {
+    position: relative;
+    top: -9px;
+    z-index: 5;
+}
+.card:nth-child(3) .medal {
+    position: relative;
+    top: -13px;
+    z-index: 5;
+}
+.card .group_text {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+.peso {
+    font-size: 20px;
+    margin-top: 5px;
+}
+.jumping-box {
+    animation: jumpAnimation 2s infinite; /* Animación de 1 segundo, infinitamente repetida */
+}
+@keyframes jumpAnimation {
+    0%, 100% {
+        transform: translateY(0); /* Posición inicial y final */
+    }
+    50% {
+        transform: translateY(-10px); /* Punto más alto del salto */
+    }
+}
+@media only screen and (max-width: 1330px) {
+    .content_home {
+        flex-direction: column;
+    }
+    .container_podio {
+        min-height: 350px;
+        margin-bottom: 40px;
+    }
 }
